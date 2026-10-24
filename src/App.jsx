@@ -1,112 +1,29 @@
 import { useEffect, useState } from 'react';
-import { Anchor, GitBranch, LogIn, LogOut, RefreshCw, ShieldCheck, Ship, AlertCircle } from 'lucide-react';
+import { Anchor, GitBranch, LogIn, LogOut, RefreshCw, ShieldCheck, Ship, AlertCircle, Waves, Sparkles } from 'lucide-react';
 import { supabase } from './supabase';
 
-export default function App() {
-  const [session, setSession] = useState(null);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [links, setLinks] = useState([]);
-  const [busy, setBusy] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [notice, setNotice] = useState('');
+const tabs = [{id:'vessel',label:'Vessel',Icon:Sparkles},{id:'lineage',label:'Lineage',Icon:GitBranch},{id:'flow',label:'Flow',Icon:Waves},{id:'sentinel',label:'Sentinel',Icon:ShieldCheck}];
 
-  useEffect(() => {
-    if (!supabase) return;
-    supabase.auth.getSession().then(({ data, error }) => {
-      if (error) setError(error.message);
-      setSession(data?.session ?? null);
-    });
-    const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
-      setSession(nextSession);
-    });
-    return () => data.subscription.unsubscribe();
-  }, []);
+function ShellArt(){return <div className="shell-stage" role="img" aria-label="Ornate golden cowrie shell glowing turquoise"><div className="aura"/><div className="cowrie"><div className="shell-ornament top-ornament">❧　❦　❧</div><div className="shell-teeth"/><div className="shell-glow"/><div className="shell-ornament bottom-ornament">❧　❦　❧</div></div><span className="shell-star star-one">✧</span><span className="shell-star star-two">✦</span></div>}
 
-  async function signIn(event) {
-    event.preventDefault();
-    if (!supabase) return setError('App setup is incomplete. Add the Supabase environment variables in Vercel.');
-    setBusy(true); setError(''); setNotice('');
-    try {
-      const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
-      if (error) throw error;
-    } catch (e) { setError(e.message || 'Could not sign in.'); }
-    finally { setBusy(false); }
-  }
-
-  async function loadLineage() {
-    if (!supabase || !session?.user) return;
-    setLoading(true); setError('');
-    try {
-      const user = session.user;
-      const { data, error: queryError } = await supabase
-        .from('boli_vessel_links')
-        .select('id, child_id, child_email, parent_email, parent_id, status, created_at')
-        .or(`child_id.eq.${user.id},parent_id.eq.${user.id}`)
-        .order('created_at', { ascending: true });
-      if (queryError) throw queryError;
-      setLinks(Array.isArray(data) ? data : []);
-    } catch (e) {
-      setLinks([]);
-      setError(e.message || 'Unable to load vessel lineage. Check your access and try again.');
-    } finally { setLoading(false); }
-  }
-
-  useEffect(() => { if (session) loadLineage(); else setLinks([]); }, [session?.user?.id]);
-
-  async function resetPassword() {
-    if (!supabase) return setError('App setup is incomplete.');
-    if (!email.trim()) return setError('Enter your email first, then choose Reset password.');
-    setBusy(true); setError(''); setNotice('');
-    try {
-      const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
-        redirectTo: window.location.origin
-      });
-      if (error) throw error;
-      setNotice('If an account exists for that email, a password reset link will be sent.');
-    } catch (e) { setError(e.message || 'Could not request a password reset.'); }
-    finally { setBusy(false); }
-  }
-
-  async function signOut() {
-    if (!supabase) return;
-    const { error } = await supabase.auth.signOut();
-    if (error) setError(error.message);
-    else { setSession(null); setLinks([]); }
-  }
-
-  const currentUserId = session?.user?.id;
-  const myLinks = links.filter(link => link.child_id === currentUserId || link.parent_id === currentUserId);
-
-  return <main className="app-shell">
-    <header className="topbar">
-      <a className="brand" href="#"><span className="brand-mark"><Anchor size={22}/></span><span>BOLI<small>VESSEL LINEAGE</small></span></a>
-      {session && <button className="quiet-button" onClick={signOut}><LogOut size={16}/> Sign out</button>}
-    </header>
-    <section className="hero">
-      <div className="eyebrow"><ShieldCheck size={14}/> CULTURAL MEMORY NETWORK</div>
-      <h1>Every vessel has<br/><em>a story.</em></h1>
-      <p>Connect generations of vessels and preserve the stories that travel between them.</p>
-    </section>
-    {!supabase && <div className="notice error"><AlertCircle size={18}/><div><strong>Setup needed</strong><p>Add <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code> in Vercel project settings to connect the app to your existing database.</p></div></div>}
-    {!session ? <section className="panel auth-panel">
-      <div className="panel-heading"><div className="icon-box"><LogIn size={20}/></div><div><h2>Welcome back</h2><p>Sign in to view your vessel lineage.</p></div></div>
-      <form onSubmit={signIn}>
-        <label>Email address<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required placeholder="you@example.com"/></label>
-        <label>Password<input type="password" autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)} required placeholder="Your password"/></label>
-        <button className="primary-button" type="submit" disabled={busy || !supabase}>{busy ? 'Please wait…' : 'Sign in'}</button>
-      </form>
-      <button className="text-button" onClick={resetPassword} disabled={busy || !supabase}>Forgot password?</button>
-    </section> : <section className="panel">
-      <div className="section-head"><div><div className="eyebrow">YOUR NETWORK</div><h2>Vessel lineage</h2><p className="muted">Signed in as {session.user.email}</p></div><button className="icon-button" onClick={loadLineage} disabled={loading} aria-label="Refresh lineage"><RefreshCw size={17} className={loading ? 'spin' : ''}/></button></div>
-      {error && <div className="notice error"><AlertCircle size={18}/><span>{error}</span></div>}
-      {notice && <div className="notice success">{notice}</div>}
-      {loading ? <div className="loading"><span className="spinner"/>Loading your lineage…</div> : myLinks.length === 0 ? <div className="empty-state"><div className="empty-icon"><GitBranch size={25}/></div><h3>Your lineage starts here</h3><p>No vessel links were found for this account yet. When a parent vessel is linked, this page will stay visible and show the link status here.</p></div> : <div className="link-list">{myLinks.map(link => <article className="link-row" key={link.id}><div className="link-symbol"><Ship size={19}/></div><div className="link-info"><strong>{link.child_id === currentUserId ? 'Parent vessel' : 'Child vessel'}</strong><span>{link.child_id === currentUserId ? (link.parent_email || 'Parent email not provided') : (link.child_email || 'Child email not provided')}</span><small>{link.status || 'status unavailable'}</small></div><span className={'status status-' + (link.status || 'unknown')}>{link.status || 'Unknown'}</span></article>)}</div>}
-      <div className="footnote"><ShieldCheck size={15}/> Lineage data is loaded securely from your BOLI database.</div>
-    </section>}
-    {error && !session && <div className="notice error"><AlertCircle size={18}/><span>{error}</span></div>}
-    {notice && !session && <div className="notice success">{notice}</div>}
-    <footer> BOLI <span>·</span> Preserve the story. Connect the generations.</footer>
-  </main>;
+export default function App(){
+ const [session,setSession]=useState(null),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[links,setLinks]=useState([]),[tab,setTab]=useState('vessel'),[busy,setBusy]=useState(false),[loading,setLoading]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState(''),[signup,setSignup]=useState(false);
+ useEffect(()=>{if(!supabase)return;supabase.auth.getSession().then(({data,error})=>{if(error)setError(error.message);setSession(data?.session??null)});const {data}=supabase.auth.onAuthStateChange((_event,s)=>setSession(s));return()=>data.subscription.unsubscribe()},[]);
+ async function signIn(e){e.preventDefault();if(!supabase)return setError('App setup is incomplete. Add the Supabase environment variables in Vercel.');setBusy(true);setError('');setNotice('');try{const {error}=signup?await supabase.auth.signUp({email:email.trim(),password}):await supabase.auth.signInWithPassword({email:email.trim(),password});if(error)throw error;if(signup)setNotice('If email confirmation is enabled, check your inbox to finish creating your account.')}catch(e){setError(e.message||'Could not sign in.')}finally{setBusy(false)}}
+ async function loadLineage(){if(!supabase||!session?.user)return;setLoading(true);setError('');try{const u=session.user;const {data,error}=await supabase.from('boli_vessel_links').select('id, child_id, child_email, parent_email, parent_id, status, created_at').or('child_id.eq.'+u.id+',parent_id.eq.'+u.id).order('created_at',{ascending:true});if(error)throw error;setLinks(Array.isArray(data)?data:[])}catch(e){setLinks([]);setError(e.message||'Unable to load vessel lineage.')}finally{setLoading(false)}}
+ useEffect(()=>{if(session)loadLineage();else setLinks([])},[session?.user?.id]);
+ async function resetPassword(){if(!email.trim())return setError('Enter your email address first.');setBusy(true);setError('');try{const {error}=await supabase.auth.resetPasswordForEmail(email.trim(),{redirectTo:window.location.origin});if(error)throw error;setNotice('If an account exists for that email, a password reset link will be sent.')}catch(e){setError(e.message)}finally{setBusy(false)}}
+ async function signOut(){const {error}=await supabase.auth.signOut();if(error)setError(error.message);else{setSession(null);setLinks([]);setTab('vessel')}}
+ const uid=session?.user?.id;const mine=links.filter(x=>x.child_id===uid||x.parent_id===uid);
+ return <main className="app-shell">
+  <header className="topbar"><button className="wordmark" onClick={()=>setTab('vessel')}>BOLI</button>{session?<button className="seal-button" onClick={signOut}><LogOut size={17}/> Seal Vessel</button>:<button className="seal-button" onClick={()=>document.querySelector('.auth-panel')?.scrollIntoView({behavior:'smooth'})}><LogIn size={17}/> Sign in</button>}</header>
+  {!session?<><section className="intro"><div className="eyebrow">CULTURAL MEMORY NETWORK</div><h1>Every vessel has<br/><em>a story.</em></h1><p>Connect generations of vessels and preserve the stories that travel between them.</p></section><section className="panel auth-panel"><div className="panel-heading"><div className="icon-box"><LogIn size={20}/></div><div><h2>{signup?'Create your vessel account':'Welcome back'}</h2><p>Sign in to view your vessel lineage.</p></div></div><form onSubmit={signIn}><label>Email address<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required placeholder="you@example.com"/></label><label>Password<input type="password" autoComplete={signup?'new-password':'current-password'} minLength="6" value={password} onChange={e=>setPassword(e.target.value)} required placeholder="Your password"/></label><button className="primary-button" type="submit" disabled={busy||!supabase}>{busy?'Please wait…':signup?'Create account':'Sign in'}</button></form><button className="text-button" onClick={()=>{setSignup(!signup);setError('');setNotice('')}}>{signup?'Already have an account? Sign in':'Create an account'}</button>{!signup&&<button className="text-button" onClick={resetPassword} disabled={busy||!supabase}>Forgot password?</button>}</section></>:<>
+  {tab==='vessel'&&<section className="vessel-view"><div className="shell-caption">CULTURAL MEMORY NETWORK</div><ShellArt/><h1 className="vessel-name">Hussain</h1><p className="vessel-subtitle">{mine.length} {mine.length===1?'connection':'memories pulse'} within your shell.</p><button className="primary-button memory-button" onClick={()=>setTab('flow')}>＋　Encapsulate a Memory</button><div className="vessel-note"><div className="photo-placeholder"><Waves size={34}/></div><p>Every vessel carries stories worth preserving.</p></div></section>}
+  {tab==='lineage'&&<section className="content-view"><div className="eyebrow">VESSEL CONNECTIONS</div><h1>Lineage</h1><p className="muted">The stories and relationships connecting vessels across generations.</p><button className="icon-button refresh-button" onClick={loadLineage} disabled={loading}><RefreshCw size={17}/> Refresh</button>{loading?<div className="loading">Loading your lineage…</div>:mine.length===0?<div className="empty-state"><GitBranch size={32}/><h3>Your lineage starts here</h3><p>No vessel links were found for this account yet. Existing BOLI links will appear here when the database returns them.</p></div>:<div className="link-list">{mine.map(link=><article className="link-row" key={link.id}><div className="link-symbol"><Ship size={19}/></div><div className="link-info"><strong>{link.child_id===uid?'Parent vessel':'Child vessel'}</strong><span>{link.child_id===uid?(link.parent_email||'Parent email not provided'):(link.child_email||'Child email not provided')}</span><small>{link.status||'Status unavailable'}</small></div><span className="status">{link.status||'Unknown'}</span></article>)}</div>}</section>}
+  {tab==='flow'&&<section className="content-view"><div className="eyebrow">LIVING STORIES</div><h1>Flow</h1><div className="empty-state"><Waves size={32}/><h3>Memories flow through generations</h3><p>The memory-writing workflow must be connected to the existing BOLI memory table before stories can be saved safely.</p></div></section>}
+  {tab==='sentinel'&&<section className="content-view"><div className="eyebrow">TRUST & PRESERVATION</div><h1>Sentinel</h1><div className="sentinel-panel"><ShieldCheck size={34}/><h2>Your vessel is protected</h2><p>Signed in as {session.user.email}. Your lineage is loaded from the connected BOLI database.</p></div></section>}
+  </>}
+  {error&&<div className="notice error"><AlertCircle size={18}/><span>{error}</span><button onClick={()=>setError('')}>×</button></div>}{notice&&<div className="notice success">{notice}<button onClick={()=>setNotice('')}>×</button></div>}
+  {session&&<nav className="bottom-nav">{tabs.map(({id,label,Icon})=><button key={id} className={'nav-item '+(tab===id?'active':'')} onClick={()=>setTab(id)}><Icon size={23}/><span>{label}</span></button>)}</nav>}
+ </main>
 }
