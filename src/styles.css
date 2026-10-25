@@ -629,3 +629,12 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .resonance-count{color:#8eabb3;font-size:11px;white-space:nowrap}
 .resonance-button:disabled{opacity:.65;cursor:wait}
 @keyframes resonance-glow{0%,100%{box-shadow:0 0 0 rgba(127,213,185,0)}50%{box-shadow:0 0 12px rgba(127,213,185,.42)}}
+
+/* Compact, distinctive shell-resonance control */
+.resonance-row{margin-top:11px;padding-top:9px}
+.resonance-button{gap:6px;padding:4px 9px;border-radius:8px;background:rgba(16,48,55,.62);font-size:10px;letter-spacing:.02em}
+.resonance-button:hover{transform:translateY(-1px);box-shadow:0 0 12px rgba(90,211,177,.16)}
+.resonance-button.resonance-active{background:linear-gradient(120deg,rgba(217,189,120,.15),rgba(22,75,69,.72));border-color:#d9bd78;color:#ffe8ad}
+.resonance-shell{width:17px;height:17px;font-size:11px;border-color:#73cdb5}
+.resonance-active .resonance-shell{box-shadow:0 0 8px rgba(127,213,185,.28)}
+.resonance-count{font-size:10px}
