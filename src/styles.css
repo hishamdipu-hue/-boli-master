@@ -473,3 +473,16 @@ button:disabled { cursor: not-allowed; opacity: .58; }
     max-height: min(440px, calc(100dvh - 24px));
   }
 }
+
+
+/* Position the 440px Encapsulate a Memory panel lower on screen */
+.modal-backdrop {
+  align-items: flex-end;
+  padding: 0 10px 14px;
+}
+.memory-modal {
+  margin: 0 auto;
+}
+@media (max-width: 420px) {
+  .modal-backdrop { padding: 0 8px 8px; }
+}
