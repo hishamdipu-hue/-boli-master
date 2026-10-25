@@ -458,3 +458,18 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 @media (max-width: 420px) {
   .memory-modal { width: calc(100% - 16px); max-height: calc(100dvh - 32px); padding: 8px; }
 }
+
+
+/* Requested fixed compact height for the complete Encapsulate a Memory panel */
+.memory-modal {
+  height: 440px;
+  min-height: 0;
+  max-height: 440px;
+  overflow-y: auto;
+}
+@media (max-width: 420px) {
+  .memory-modal {
+    height: min(440px, calc(100dvh - 24px));
+    max-height: min(440px, calc(100dvh - 24px));
+  }
+}
