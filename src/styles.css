@@ -154,3 +154,13 @@
   .shell-stage.shell-artwork::before,
   .shell-stage.shell-artwork .shell-image { animation: none; }
 }
+
+
+/* Typography alignment pass: use the app's clean sans-serif type consistently.
+   Deliberately leaves shell sizing, colors, and animation untouched. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+:root, body, button, input, textarea, select, .wordmark, .intro h1, .vessel-name,
+.content-view h1, .sentinel-panel h2, .memory-copy h3, .flow-card h3,
+.modal-heading h2, .login-hero h1 {
+  font-family: 'DM Sans', sans-serif;
+}
