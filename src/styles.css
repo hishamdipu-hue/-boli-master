@@ -232,3 +232,34 @@ button:disabled { cursor: not-allowed; opacity: .58; }
   .memory-modal { width: 100%; max-height: calc(100dvh - max(22px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom))); margin: 0 auto; padding: 16px; }
   .modal-heading h2 { font-size: clamp(21px, 6vw, 27px); }
 }
+
+
+/* Compact, distinctive memory vessel composer and visible type selector */
+.memory-modal { width: min(100%, 450px); max-height: min(86dvh, 740px); padding: 17px; border-color: #3c665f; border-radius: 20px; background: radial-gradient(ellipse at 50% 0%, #153b43 0%, #0a2230 44%, #061521 100%); box-shadow: 0 25px 90px #000b, inset 0 1px 0 #8ce0c51c; }
+.memory-modal .modal-heading { align-items: center; padding-bottom: 12px; border-bottom: 1px solid #6db5a51e; margin-bottom: 12px; }
+.memory-modal .modal-heading h2 { margin: 4px 0 0; font-size: clamp(21px, 5vw, 26px); letter-spacing: -.035em; }
+.memory-type-picker { margin: 8px 0 16px; padding: 11px; border: 1px solid #38665f; border-radius: 15px; background: linear-gradient(145deg, #0a2a34, #071c2a); box-shadow: inset 0 1px 0 #b6fff013; }
+.memory-type-label { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 0 2px 10px; }
+.memory-type-label .eyebrow { color: #8de0c4; font-size: 10px; letter-spacing: .14em; }
+.memory-type-hint { color: #8aaab1; font-size: 11px; }
+.memory-type-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+.memory-type-card { min-width: 0; min-height: 91px; padding: 9px 4px 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 1px solid #294955; border-radius: 11px; color: #c9e1e2; background: #0a202d; text-align: center; }
+.memory-type-card .memory-type-icon { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; color: #91d9c6; background: #173d43; font-size: 19px; line-height: 1; }
+.memory-type-card strong { font-size: 12px; font-weight: 650; }
+.memory-type-card small { color: #8eabb3; font-size: 9px; line-height: 1.25; overflow-wrap: anywhere; }
+.memory-type-card.selected { border-color: #77d9bb; color: #f0fffa; background: linear-gradient(155deg, #174a4c, #0c3039); box-shadow: 0 0 0 1px #77d9bb33, 0 5px 18px #4cc8a015; }
+.memory-type-card.selected .memory-type-icon { color: #06251f; background: #8ce0c3; }
+.memory-modal label { margin: 10px 0; font-size: 12px; color: #c1d9dc; }
+.memory-modal input:not([type="file"]), .memory-modal textarea, .memory-modal select { margin-top: 5px; padding: 10px 11px; border-radius: 9px; background-color: #061a26; border-color: #294955; }
+.memory-modal textarea { min-height: 88px; }
+.memory-modal .field-grid { gap: 0 10px; }
+.memory-modal .privacy-note { padding: 9px 10px; border-left: 2px solid #68c9ad; border-radius: 0 7px 7px 0; background: #12303980; font-size: 11px; }
+.memory-modal > .primary-button { width: 100%; min-height: 43px; border-radius: 11px; background: linear-gradient(100deg, #b88a45, #e0c17b 48%, #9bdcc3); color: #08212a; font-weight: 750; letter-spacing: .01em; }
+@media (max-width: 420px) {
+  .memory-modal { padding: 13px; border-radius: 16px; }
+  .memory-type-picker { padding: 8px; }
+  .memory-type-grid { gap: 5px; }
+  .memory-type-card { min-height: 82px; padding: 7px 2px; }
+  .memory-type-card small { font-size: 8px; }
+  .memory-type-label { flex-wrap: wrap; }
+}
