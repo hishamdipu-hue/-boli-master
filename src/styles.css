@@ -1160,3 +1160,55 @@ input,select,textarea,button{max-width:100%}
     margin-bottom: 120px;
   }
 }
+
+
+/* Distinct unread-message indicators across Sentinel and the bottom navigation. */
+.nav-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-unread-badge,
+.unread-message-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 999px;
+  color: #fff;
+  background: #e44d68;
+  border: 1px solid rgba(255,255,255,.85);
+  box-shadow: 0 0 14px rgba(228,77,104,.35);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+.nav-unread-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+}
+.unread-message-dot {
+  margin-left: 7px;
+  vertical-align: middle;
+}
+.unread-message-pill {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px 0 0 7px;
+  padding: 3px 7px;
+  border: 1px solid rgba(228,77,104,.42);
+  border-radius: 999px;
+  color: #ffb4c1;
+  background: rgba(228,77,104,.12);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.friend-request-row.has-unread-message {
+  border-color: rgba(228,77,104,.4);
+  background: rgba(228,77,104,.055);
+}
