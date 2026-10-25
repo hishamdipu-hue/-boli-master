@@ -744,3 +744,14 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .lineage-map-legend i{display:inline-block;width:6px;height:6px;border-radius:50%}.legend-connected{background:#6cd4b4;box-shadow:0 0 6px rgba(108,212,180,.5)}.legend-pending{background:#e2c477}
 .lineage-map-empty{display:grid;justify-items:center;gap:9px;padding:20px 12px}.lineage-empty-orbit{display:grid;place-items:center;width:54px;height:54px;border:1px solid rgba(105,226,211,.32);border-radius:50%;background:radial-gradient(circle,rgba(48,218,199,.12),transparent 72%);color:#8ce5d6;box-shadow:0 0 0 8px rgba(67,206,190,.035)}.lineage-map-empty strong{font-size:12px;color:#d8e9e8}.lineage-map-empty span{max-width:250px;font-size:11px;line-height:1.6;color:#7f9ba5}
 @media(max-width:420px){.lineage-map{padding:12px}.lineage-map-heading{gap:7px;font-size:9px}.lineage-tree-root{padding:10px 12px}.lineage-branch-card{padding:10px;gap:8px}.lineage-branch-copy>strong{font-size:11px}.lineage-map-legend{margin-left:8px}}
+
+
+/* Login placement: keep the compact auth panel below the shell and hero, not vertically centered. */
+.auth-panel {
+  margin-top: clamp(22px, 5vh, 46px) !important;
+}
+@media (max-width: 420px) {
+  .auth-panel {
+    margin-top: 24px !important;
+  }
+}
