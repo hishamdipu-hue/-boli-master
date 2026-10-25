@@ -768,7 +768,7 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 }
 
 
-/* Responsive login panel: fit within the viewport on phones and tablets. */
+/* BOLI responsive login panel */
 .auth-panel {
   box-sizing: border-box;
   width: min(100%, 440px);
@@ -777,16 +777,24 @@ button:disabled { cursor: not-allowed; opacity: .58; }
   margin-left: auto !important;
   margin-right: auto !important;
 }
-.auth-panel *, .auth-panel *::before, .auth-panel *::after {
+
+/* Prevent content from overflowing */
+.auth-panel *,
+.auth-panel *::before,
+.auth-panel *::after {
   box-sizing: border-box;
   min-width: 0;
 }
+
 .auth-panel input,
 .auth-panel button,
 .auth-panel select,
 .auth-panel textarea {
+  width: 100%;
   max-width: 100%;
 }
+
+/* Phones and tablets */
 @media (max-width: 600px) {
   .auth-panel {
     width: calc(100% - 32px);
@@ -794,6 +802,8 @@ button:disabled { cursor: not-allowed; opacity: .58; }
     padding-right: 18px;
   }
 }
+
+/* Very small phones */
 @media (max-width: 360px) {
   .auth-panel {
     width: calc(100% - 24px);
@@ -801,3 +811,4 @@ button:disabled { cursor: not-allowed; opacity: .58; }
     padding-right: 14px;
   }
 }
+
