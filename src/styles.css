@@ -61,3 +61,43 @@
 @media (prefers-reduced-motion: reduce) {
   .shell-stage.shell-artwork::before { animation: none; }
 }
+
+
+/* BOLI shell: transparent cut-out with the original living pulse animation. */
+.shell-stage.shell-artwork {
+  background: transparent !important;
+  isolation: isolate;
+}
+.shell-stage.shell-artwork::before {
+  display: block !important;
+  z-index: 0;
+  width: 76%;
+  height: 76%;
+  background: radial-gradient(ellipse, rgba(38,249,231,.22) 0%, rgba(61,231,219,.12) 34%, rgba(215,168,92,.09) 50%, transparent 73%);
+  filter: blur(19px);
+  animation: boli-shell-aura-pulse 3.1s ease-in-out infinite;
+}
+.shell-stage.shell-artwork .shell-image {
+  background: transparent !important;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.2)) drop-shadow(0 0 10px rgba(38,249,231,.12));
+  transform-origin: 50% 50%;
+  animation: boli-shell-living 4.2s ease-in-out infinite;
+}
+.login-shell .shell-stage.shell-artwork::before { width: 70%; height: 70%; }
+.login-shell .shell-stage.shell-artwork .shell-image {
+  animation: boli-shell-living 4.2s ease-in-out infinite;
+}
+@keyframes boli-shell-living {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.035); }
+}
+@keyframes boli-shell-aura-pulse {
+  0%, 100% { opacity: .42; transform: scale(.88); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shell-stage.shell-artwork::before,
+  .shell-stage.shell-artwork .shell-image,
+  .login-shell .shell-stage.shell-artwork .shell-image { animation: none; }
+}
