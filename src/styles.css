@@ -325,3 +325,9 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .memory-modal .date-picker-card label { margin: 5px 0; }
 .memory-modal .date-picker-card input { min-height: 36px; padding: 7px 9px; }
 @media (max-width: 380px) { .memory-modal { padding: 11px; max-height: calc(100dvh - 24px); } }
+
+/* Simple, clear required historical date field */
+.memory-modal .date-picker-card { margin: 7px 0 9px; padding: 9px 11px; }
+.memory-modal .date-picker-card .date-picker-heading { margin-bottom: 3px; }
+.memory-modal .date-picker-card label { display: block; margin: 5px 0 2px; }
+.memory-modal .date-picker-card input { width: 100%; min-height: 38px; }
