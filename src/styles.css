@@ -311,3 +311,17 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .location-chips button.clear-location { border-color: #806b42; color: #efd59b; }
 .location-helper { margin: 7px 0 0; color: #8eabb3; font-size: 10px; line-height: 1.45; }
 @media (max-width: 380px) { .location-picker .field-grid { grid-template-columns: 1fr; gap: 0; } }
+
+/* Compact preservation form and historical-period panel */
+.memory-modal { width: min(100%, 420px); max-height: min(82dvh, 680px); padding: 14px; }
+.memory-modal .modal-heading { margin-bottom: 8px; padding-bottom: 8px; }
+.memory-modal .memory-type-grid { gap: 5px; }
+.memory-modal .memory-type-card { padding: 8px 5px; }
+.memory-modal .location-picker { margin: 8px 0; padding: 9px; border-radius: 11px; }
+.memory-modal .location-picker .memory-type-label { margin-bottom: 6px; }
+.memory-modal .location-picker label { margin: 5px 0; }
+.memory-modal .location-picker select { min-height: 36px; padding: 7px 8px; }
+.memory-modal .date-picker-card { margin: 8px 0 10px; padding: 9px; border-radius: 11px; }
+.memory-modal .date-picker-card label { margin: 5px 0; }
+.memory-modal .date-picker-card input { min-height: 36px; padding: 7px 9px; }
+@media (max-width: 380px) { .memory-modal { padding: 11px; max-height: calc(100dvh - 24px); } }
