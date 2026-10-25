@@ -101,3 +101,56 @@
   .shell-stage.shell-artwork .shell-image,
   .login-shell .shell-stage.shell-artwork .shell-image { animation: none; }
 }
+
+
+/* BOLI shell scale refinement: smaller shell, synchronized living shell and light pulse. */
+.shell-stage.shell-artwork {
+  height: clamp(250px, 58vw, 350px);
+  max-width: 400px;
+}
+.shell-stage.shell-artwork .shell-image {
+  width: 78%;
+  height: 90%;
+  max-width: 400px;
+  object-fit: contain;
+  transform-origin: 50% 50%;
+  animation: boli-shell-living 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.22)) drop-shadow(0 0 12px rgba(38,249,231,.18));
+}
+.shell-stage.shell-artwork::before {
+  z-index: 0;
+  width: 68%;
+  height: 68%;
+  background: radial-gradient(ellipse, rgba(38,249,231,.32) 0%, rgba(61,231,219,.2) 32%, rgba(215,168,92,.12) 52%, transparent 74%);
+  filter: blur(22px);
+  animation: boli-shell-aura-pulse 3.2s ease-in-out infinite;
+}
+.login-shell { height: clamp(180px, 48vw, 245px); max-width: 320px; }
+.login-shell .shell-stage.shell-artwork {
+  height: 100%;
+  max-width: 320px;
+}
+.login-shell .shell-stage.shell-artwork .shell-image {
+  width: 72%;
+  height: 88%;
+  animation: boli-shell-living 3.2s ease-in-out infinite;
+}
+.login-shell .shell-stage.shell-artwork::before { width: 66%; height: 66%; }
+@keyframes boli-shell-living {
+  0%, 100% { transform: translateY(0) scale(.97); }
+  50% { transform: translateY(-4px) scale(1.015); }
+}
+@keyframes boli-shell-aura-pulse {
+  0%, 100% { opacity: .32; transform: scale(.82); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+@media (max-width: 420px) {
+  .shell-stage.shell-artwork { height: 255px; }
+  .shell-stage.shell-artwork .shell-image { width: 78%; height: 90%; }
+  .login-shell { height: 205px; }
+  .login-shell .shell-stage.shell-artwork .shell-image { width: 72%; height: 88%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shell-stage.shell-artwork::before,
+  .shell-stage.shell-artwork .shell-image { animation: none; }
+}
