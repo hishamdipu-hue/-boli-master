@@ -412,3 +412,49 @@ button:disabled { cursor: not-allowed; opacity: .58; }
   .memory-modal { width: 100%; max-height: calc(100dvh - 20px); padding: 11px; border-radius: 14px; }
   .memory-modal .memory-type-card { min-height: 60px; }
 }
+
+
+/* Make the ENTIRE “Encapsulate a Memory” upload panel compact, not just its sub-panels */
+.memory-modal {
+  width: min(100% - 20px, 340px);
+  max-height: min(76dvh, 560px);
+  padding: 9px;
+  border-radius: 13px;
+  overflow-y: auto;
+}
+.memory-modal .modal-heading { margin: 0 0 5px; padding: 0 0 5px; }
+.memory-modal .modal-heading h2 { font-size: 18px; line-height: 1.15; }
+.memory-modal .modal-heading p,
+.memory-modal .modal-heading .subtitle { font-size: 10px; line-height: 1.3; margin-top: 3px; }
+.memory-modal .memory-type-label { font-size: 10px; margin: 4px 0; }
+.memory-modal .memory-type-grid { gap: 4px; }
+.memory-modal .memory-type-card { min-height: 48px; padding: 5px 3px; border-radius: 7px; }
+.memory-modal .memory-type-card strong { font-size: 10px; }
+.memory-modal .memory-type-card small { font-size: 8px; line-height: 1.15; }
+.memory-modal label { margin: 4px 0; font-size: 10px; }
+.memory-modal input:not([type="file"]),
+.memory-modal textarea,
+.memory-modal select { margin-top: 3px; padding: 6px 7px; font-size: 12px; border-radius: 7px; }
+.memory-modal textarea { min-height: 48px; }
+.memory-modal input[type="file"] { max-width: 100%; font-size: 10px; }
+.memory-modal .location-picker { margin: 5px 0; padding: 6px; border-radius: 8px; }
+.memory-modal .location-picker .memory-type-label { margin: 0 0 3px; }
+.memory-modal .location-picker label { margin: 3px 0; }
+.memory-modal .location-picker select { min-height: 29px; padding: 4px 6px; }
+.memory-modal .date-picker-card { margin: 5px 0; padding: 6px; border-radius: 8px; }
+.memory-modal .date-picker-card .date-picker-heading { margin-bottom: 2px; }
+.memory-modal .date-picker-card label { margin: 3px 0 1px; }
+.memory-modal .date-mode-switch { gap: 4px; margin: 4px 0; }
+.memory-modal .date-mode-switch button { min-height: 27px; padding: 4px; font-size: 10px; border-radius: 6px; }
+.memory-modal .date-picker-card input[type="date"],
+.memory-modal .date-picker-card input[type="text"] { min-height: 29px; padding: 4px 6px; }
+.memory-modal .memory-visibility-picker { margin-top: 5px; }
+.memory-modal .memory-visibility-grid { gap: 4px; }
+.memory-modal .memory-visibility-card { padding: 5px 3px; border-radius: 7px; }
+.memory-modal .memory-visibility-card strong { font-size: 9px; }
+.memory-modal .memory-visibility-card small { font-size: 8px; line-height: 1.2; }
+.memory-modal .privacy-note { margin: 4px 0 5px; padding: 5px 6px; font-size: 9px; line-height: 1.3; }
+.memory-modal > .primary-button { min-height: 32px; padding: 7px; font-size: 11px; }
+@media (max-width: 420px) {
+  .memory-modal { width: calc(100% - 16px); max-height: calc(100dvh - 32px); padding: 8px; }
+}
