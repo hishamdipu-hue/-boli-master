@@ -283,3 +283,18 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .location-picker input { border-color: #315c63; }
 .location-picker label:first-child select:focus, .location-picker input:focus { border-color: #83ddc2; box-shadow: 0 0 0 2px #83ddc21c; }
 @media (max-width: 380px) { .location-picker { padding: 9px; } .location-picker .field-grid { grid-template-columns: 1fr; } }
+
+/* Friendly quick-place and date cards */
+.specific-place-field { margin: 8px 0 4px; }
+.optional-tag { margin-left: 6px; padding: 3px 6px; border: 1px solid #416c6c; border-radius: 5px; color: #8fdcc6; font-size: 8px; letter-spacing: .1em; vertical-align: middle; }
+.location-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 7px 0 2px; }
+.location-chips button { padding: 6px 9px; border: 1px solid #37605f; border-radius: 999px; color: #bfe3dc; background: #102f37; font-size: 10px; }
+.location-chips button:active, .location-chips button:focus-visible { border-color: #8ce0c3; background: #1a4848; }
+.date-picker-card { margin: 13px 0 15px; padding: 12px; border: 1px solid #806b42; border-radius: 15px; background: linear-gradient(145deg, #292b2a, #0a202a); box-shadow: inset 0 1px 0 #f4d69a12; }
+.date-picker-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 7px; margin-bottom: 8px; }
+.date-auto-tag { padding: 4px 7px; border-radius: 999px; color: #102821; background: #9bdcc3; font-size: 8px; font-weight: 800; letter-spacing: .08em; }
+.date-picker-card label { margin: 7px 0; }
+.date-picker-card input[type="date"] { min-height: 40px; color-scheme: dark; }
+.date-picker-card .historical-period-label { margin-top: 9px; }
+.date-reset-button { margin-top: 5px; padding: 7px 10px; border: 1px solid #806b42; border-radius: 9px; color: #efd59b; background: #302b20; font-size: 10px; }
+@media (max-width: 380px) { .date-picker-card { padding: 9px; } .date-picker-heading { align-items: flex-start; flex-direction: column; } .location-chips button { padding: 6px 8px; } }
