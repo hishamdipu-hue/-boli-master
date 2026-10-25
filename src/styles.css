@@ -546,3 +546,23 @@ button:disabled { cursor: not-allowed; opacity: .58; }
   font-size: 10px;
   line-height: 1.4;
 }
+
+
+/* Memory cards: keep island and atoll details in a clear right-hand column */
+.memory-card { display: grid; grid-template-columns: minmax(70px, 110px) minmax(0, 1fr) minmax(100px, 145px); align-items: stretch; gap: 14px; }
+.memory-card > img, .memory-card > .memory-image-placeholder { width: 100%; min-width: 0; height: 100%; min-height: 110px; object-fit: cover; }
+.memory-copy { min-width: 0; }
+.memory-location-side { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 7px; padding: 12px; border-left: 1px solid #315c63; background: linear-gradient(145deg, #103a3a66, #071a2666); border-radius: 0 10px 10px 0; min-width: 0; overflow-wrap: anywhere; }
+.memory-location-side .eyebrow { font-size: 9px; letter-spacing: .13em; color: #8bd8bd; }
+.memory-location-side strong { color: #f0d8a0; font-size: 13px; line-height: 1.3; }
+.memory-location-side > span:last-child { color: #b2cacc; font-size: 12px; }
+.topbar-actions { display: flex; align-items: center; justify-content: flex-end; gap: 9px; margin-left: auto; }
+.user-corner-button { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #4d8b7d; border-radius: 50%; color: #d8fff0; background: linear-gradient(145deg, #17463f, #0a202d); cursor: pointer; box-shadow: inset 0 1px 0 #d4fff122; }
+.user-corner-button:focus-visible { outline: 2px solid #8bd8bd; outline-offset: 3px; }
+@media (max-width: 560px) {
+  .memory-card { grid-template-columns: 76px minmax(0, 1fr); gap: 10px; }
+  .memory-location-side { grid-column: 2; border-left: 0; border-top: 1px solid #315c63; border-radius: 0 0 9px 9px; padding: 8px 10px; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 5px 9px; }
+  .memory-location-side .eyebrow { grid-column: 1 / -1; }
+  .memory-location-side strong, .memory-location-side > span:last-child { font-size: 11px; }
+  .topbar-actions .seal-button { padding: 8px 10px; font-size: 11px; }
+}
