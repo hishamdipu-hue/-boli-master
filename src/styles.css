@@ -755,3 +755,14 @@ button:disabled { cursor: not-allowed; opacity: .58; }
     margin-top: 24px !important;
   }
 }
+
+
+/* Login card must sit clearly lower on the page, below the shell artwork. */
+.login-hero { margin-bottom: 0 !important; }
+.auth-panel { margin-top: 56px !important; }
+@media (max-width: 600px) {
+  .auth-panel { margin-top: 42px !important; }
+}
+@media (max-width: 420px) {
+  .auth-panel { margin-top: 36px !important; }
+}
