@@ -845,3 +845,8 @@ button:disabled { cursor: not-allowed; opacity: .58; }
     padding-right: 12px;
   }
 }
+
+
+/* Keep the login card horizontally centered and anchored near the bottom of the viewport. */
+.auth-panel{position:fixed;left:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(430px,calc(100% - 32px));max-height:calc(100dvh - 100px);overflow-y:auto;margin:0;z-index:20;}
+@media(max-width:520px){.auth-panel{bottom:max(10px,env(safe-area-inset-bottom));width:calc(100% - 28px);max-height:calc(100dvh - 76px);padding:18px;}}
