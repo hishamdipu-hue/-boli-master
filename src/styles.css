@@ -766,3 +766,38 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 @media (max-width: 420px) {
   .auth-panel { margin-top: 36px !important; }
 }
+
+
+/* Responsive login panel: fit within the viewport on phones and tablets. */
+.auth-panel {
+  box-sizing: border-box;
+  width: min(100%, 440px);
+  max-width: 100%;
+  min-width: 0;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.auth-panel *, .auth-panel *::before, .auth-panel *::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+.auth-panel input,
+.auth-panel button,
+.auth-panel select,
+.auth-panel textarea {
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .auth-panel {
+    width: calc(100% - 32px);
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+@media (max-width: 360px) {
+  .auth-panel {
+    width: calc(100% - 24px);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
