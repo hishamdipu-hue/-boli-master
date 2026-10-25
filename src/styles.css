@@ -331,3 +331,9 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .memory-modal .date-picker-card .date-picker-heading { margin-bottom: 3px; }
 .memory-modal .date-picker-card label { display: block; margin: 5px 0 2px; }
 .memory-modal .date-picker-card input { width: 100%; min-height: 38px; }
+
+/* Easy date picker mode switch */
+.memory-modal .date-mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 7px 0 9px; }
+.memory-modal .date-mode-switch button { min-height: 36px; padding: 7px 9px; border: 1px solid #31545d; border-radius: 8px; background: #071c28; color: #9cb8bd; font: inherit; font-size: 12px; cursor: pointer; }
+.memory-modal .date-mode-switch button.active { border-color: #8bd8bd; background: #174039; color: #e7fff3; }
+.memory-modal .date-picker-card input[type="date"] { width: 100%; min-height: 42px; padding: 8px 10px; color-scheme: dark; }
