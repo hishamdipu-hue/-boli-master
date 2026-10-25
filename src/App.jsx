@@ -3,7 +3,7 @@ import { GitBranch, LogIn, LogOut, RefreshCw, ShieldCheck, Ship, AlertCircle, Wa
 import { supabase } from './supabase';
 
 const tabs = [{id:'vessel',label:'Vessel',Icon:Sparkles},{id:'lineage',label:'Lineage',Icon:GitBranch},{id:'flow',label:'Flow',Icon:Waves},{id:'sentinel',label:'Sentinel',Icon:ShieldCheck}];
-function ShellArt(){return <div className="shell-stage shell-artwork" role="img" aria-label="The original ornate golden cowrie shell with glowing turquoise opening"><img className="shell-image" src="https://media.base44.com/images/public/6a3d36bac1b3682f1ed1a2ce/ab215a4f0_boli-shell-reference.jpg" alt="Ornate golden cowrie shell glowing turquoise" /></div>}
+function ShellArt(){return <div className="shell-stage shell-artwork" role="img" aria-label="The original ornate golden cowrie shell with glowing turquoise opening"><img className="shell-image" src="https://media.base44.com/images/public/6a3d36bac1b3682f1ed1a2ce/9e41e9d9d_boli-shell-transparent.png" alt="Ornate golden cowrie shell glowing turquoise" /></div>}
 
 export default function App(){
  const [session,setSession]=useState(null),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[links,setLinks]=useState([]),[artifacts,setArtifacts]=useState([]),[vesselName,setVesselName]=useState('Hussain'),[tab,setTab]=useState('vessel'),[busy,setBusy]=useState(false),[loading,setLoading]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState(''),[signup,setSignup]=useState(false),[showMemory,setShowMemory]=useState(false),[memoryTitle,setMemoryTitle]=useState(''),[memoryStory,setMemoryStory]=useState(''),[memoryIsland,setMemoryIsland]=useState(''),[memoryEra,setMemoryEra]=useState('');
