@@ -618,3 +618,14 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .flow-post-content p{margin:0 0 10px;color:#c0d0d4;line-height:1.6;white-space:pre-wrap}
 .flow-post-content>small{color:#8eabb3}
 @media(max-width:600px){.flow-card.national-flow-card{border-radius:12px}.national-flow-card .flow-media{max-height:480px}.flow-post-content{padding:13px}.flow-post-content h3{font-size:18px}}
+
+/* BOLI's distinctive community reaction: a quiet shell resonance. */
+.resonance-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:13px;border-top:1px solid rgba(109,198,173,.18)}
+.resonance-button{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border:1px solid #315b60;border-radius:999px;background:linear-gradient(135deg,#102d39,#123b3b);color:#c4ddd9;font:inherit;font-size:12px;font-weight:650;cursor:pointer;transition:transform .18s,border-color .18s,background .18s,box-shadow .18s}
+.resonance-button:hover{transform:translateY(-1px);border-color:#7fd5b9;box-shadow:0 0 18px rgba(90,211,177,.12)}
+.resonance-button.resonance-active{border-color:#d9bd78;background:linear-gradient(135deg,#3a3020,#164b45);color:#ffe8ad;box-shadow:0 0 16px rgba(217,189,120,.12)}
+.resonance-shell{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid currentColor;border-radius:50%;font-size:15px;line-height:1}
+.resonance-active .resonance-shell{animation:resonance-glow 1.8s ease-in-out infinite}
+.resonance-count{color:#8eabb3;font-size:11px;white-space:nowrap}
+.resonance-button:disabled{opacity:.65;cursor:wait}
+@keyframes resonance-glow{0%,100%{box-shadow:0 0 0 rgba(127,213,185,0)}50%{box-shadow:0 0 12px rgba(127,213,185,.42)}}
