@@ -500,3 +500,49 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 @media (max-width: 420px) {
   .modal-backdrop { padding: 12px 8px; }
 }
+
+
+/* Reliable, touch-friendly file picker inside the memory upload form */
+.memory-modal .memory-file-choose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  margin: 5px 0 4px;
+  padding: 8px 12px;
+  position: relative;
+  z-index: 3;
+  border: 1px solid #62bca5;
+  border-radius: 8px;
+  color: #e5fff4;
+  background: #123d3b;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  touch-action: manipulation;
+  pointer-events: auto;
+}
+.memory-modal .memory-file-input {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: 36px;
+  margin: 4px 0;
+  padding: 6px;
+  border: 1px solid #315c63;
+  border-radius: 8px;
+  color: #d8e9e9;
+  background: #071b2a;
+  font-size: 11px;
+  pointer-events: auto;
+  opacity: 1;
+}
+.memory-modal .memory-file-status {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #a9c5c8;
+  font-size: 10px;
+  line-height: 1.4;
+}
