@@ -645,3 +645,13 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .flow-card button.resonance-button:hover{transform:translateY(-1px);box-shadow:0 0 9px rgba(90,211,177,.16)}
 .flow-card .resonance-shell{width:15px;height:15px;flex:0 0 15px;font-size:10px}
 .flow-card .resonance-count{font-size:9px}
+
+
+/* Click-to-open photo memory viewer */
+.clickable-memory-photo{cursor:zoom-in}
+.clickable-memory-photo:focus-visible{outline:2px solid var(--gold,#e6c36a);outline-offset:3px}
+.photo-viewer-backdrop{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,5,12,.94);backdrop-filter:blur(10px)}
+.photo-viewer-panel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(100%,1100px);max-height:100%;gap:12px}
+.photo-viewer-image{display:block;max-width:100%;max-height:calc(100dvh - 100px);width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 16px 60px rgba(0,0,0,.45)}
+.photo-viewer-title{max-width:90%;color:#fff;text-align:center;font-size:14px}
+.photo-viewer-close{position:fixed;top:16px;right:16px;z-index:1;display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-height:42px;padding:0;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(10,22,34,.9);color:#fff;font-size:30px;line-height:1;cursor:pointer}
