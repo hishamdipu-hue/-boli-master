@@ -566,3 +566,11 @@ button:disabled { cursor: not-allowed; opacity: .58; }
   .memory-location-side strong, .memory-location-side > span:last-child { font-size: 11px; }
   .topbar-actions .seal-button { padding: 8px 10px; font-size: 11px; }
 }
+
+
+/* Uploaded memory previews: keep images, audio and video readable inside cards. */
+.memory-media-preview{display:block;width:100%;max-width:100%;object-fit:cover;border-radius:12px;min-width:0}
+.memory-card>.memory-media-preview{max-height:280px}
+.memory-card>img.memory-media-preview{height:220px}
+.memory-card>video.memory-media-preview{height:auto;max-height:280px;background:#020810}
+.memory-card>audio.memory-audio-preview{height:54px;object-fit:contain;background:rgba(7,20,31,.9)}
