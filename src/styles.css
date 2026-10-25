@@ -486,3 +486,17 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 @media (max-width: 420px) {
   .modal-backdrop { padding: 0 8px 8px; }
 }
+
+
+/* Center the complete Encapsulate a Memory panel vertically and horizontally */
+.modal-backdrop {
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.memory-modal {
+  margin: auto;
+}
+@media (max-width: 420px) {
+  .modal-backdrop { padding: 12px 8px; }
+}
