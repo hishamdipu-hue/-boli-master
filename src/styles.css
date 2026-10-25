@@ -337,3 +337,78 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .memory-modal .date-mode-switch button { min-height: 36px; padding: 7px 9px; border: 1px solid #31545d; border-radius: 8px; background: #071c28; color: #9cb8bd; font: inherit; font-size: 12px; cursor: pointer; }
 .memory-modal .date-mode-switch button.active { border-color: #8bd8bd; background: #174039; color: #e7fff3; }
 .memory-modal .date-picker-card input[type="date"] { width: 100%; min-height: 42px; padding: 8px 10px; color-scheme: dark; }
+
+
+/* Distinct compact BOLI preservation modal */
+.memory-modal {
+  width: min(100%, 390px);
+  max-height: min(80dvh, 640px);
+  padding: 13px;
+  border-radius: 17px;
+  border: 1px solid #4d8b7d;
+  background:
+    radial-gradient(ellipse at 100% 0%, #1b514b55 0%, transparent 42%),
+    linear-gradient(155deg, #0d2935 0%, #071a26 72%, #0b292d 100%);
+  box-shadow: 0 18px 55px #0009, inset 0 1px 0 #c0ffe31c;
+}
+.memory-modal .modal-heading {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+.memory-modal .modal-heading h2 {
+  font-size: clamp(20px, 4.8vw, 24px);
+  letter-spacing: -.035em;
+}
+.memory-modal .memory-type-label { margin-bottom: 7px; gap: 6px; }
+.memory-modal .memory-type-grid { gap: 5px; }
+.memory-modal .memory-type-card {
+  min-height: 66px;
+  padding: 7px 4px;
+  border-radius: 9px;
+}
+.memory-modal .memory-type-card strong { font-size: 11px; }
+.memory-modal .memory-type-card small { font-size: 9px; }
+.memory-modal label { margin: 7px 0; font-size: 11px; }
+.memory-modal input:not([type="file"]),
+.memory-modal textarea,
+.memory-modal select {
+  margin-top: 4px;
+  padding: 8px 9px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.memory-modal textarea { min-height: 68px; }
+.memory-modal .location-picker {
+  margin: 7px 0;
+  padding: 8px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #123b3b, #0a222d 75%);
+  border-color: #34756c;
+}
+.memory-modal .location-picker .memory-type-label { margin-bottom: 4px; }
+.memory-modal .location-picker .field-grid { gap: 0 7px; }
+.memory-modal .location-picker label { margin: 4px 0; }
+.memory-modal .location-picker select { min-height: 34px; padding: 6px 7px; }
+.memory-modal .date-picker-card {
+  margin: 7px 0 8px;
+  padding: 8px;
+  border-radius: 10px;
+  border-color: #987a43;
+  background: linear-gradient(135deg, #302d23, #0c222c 78%);
+}
+.memory-modal .date-picker-card label { margin: 5px 0 2px; }
+.memory-modal .date-mode-switch { gap: 5px; margin: 5px 0 7px; }
+.memory-modal .date-mode-switch button { min-height: 32px; padding: 6px; font-size: 11px; }
+.memory-modal .date-picker-card input[type="date"],
+.memory-modal .date-picker-card input[type="text"] { min-height: 35px; padding: 6px 8px; }
+.memory-modal .memory-visibility-picker { margin-top: 8px; }
+.memory-modal .memory-visibility-grid { gap: 5px; }
+.memory-modal .memory-visibility-card { padding: 8px 4px; border-radius: 9px; }
+.memory-modal .memory-visibility-card strong { font-size: 10px; }
+.memory-modal .memory-visibility-card small { font-size: 9px; }
+.memory-modal .privacy-note { margin: 7px 0 9px; padding: 7px 8px; font-size: 10px; line-height: 1.4; }
+.memory-modal > .primary-button { min-height: 39px; border-radius: 9px; }
+@media (max-width: 420px) {
+  .memory-modal { width: 100%; max-height: calc(100dvh - 20px); padding: 11px; border-radius: 14px; }
+  .memory-modal .memory-type-card { min-height: 60px; }
+}
