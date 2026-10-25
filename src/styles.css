@@ -683,3 +683,10 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 
 /* Balanced page spacing: Lineage, Flow, Sentinel */
 .content-view{width:100%;max-width:620px;margin:28px auto 36px;padding:0 clamp(2px,1vw,8px)}.content-view>.eyebrow{margin-bottom:10px}.content-view>h1{margin:8px 0 12px;line-height:1.08}.content-view>.muted{max-width:500px;margin:0 0 18px}.content-view>.refresh-button,.content-view>.icon-button{margin:16px 0 20px}.content-view>.panel,.content-view>.sentinel-panel,.content-view>.friend-request-panel,.content-view>.member-profile-panel{margin-top:18px;margin-bottom:20px}.link-list{gap:12px;margin-top:18px}.link-row{gap:12px;padding:13px 14px}.sentinel-panel{margin-top:18px;padding:20px}.sentinel-panel h2{margin:0 0 10px;line-height:1.2}.sentinel-panel p{margin:0 0 12px}.flow-card{gap:12px;margin:12px 0 0;padding:15px}.flow-card h3{margin:0 0 8px;line-height:1.25}.flow-card p{margin:0 0 10px}.flow-card .resonance-row{margin-top:10px;padding-top:9px}.memory-list{margin-top:22px;gap:18px}@media(max-width:600px){.content-view{margin-top:22px;margin-bottom:28px;padding:0 2px}.content-view>h1{font-size:clamp(30px,8.5vw,38px);margin-bottom:10px}.content-view>.muted{font-size:12px;line-height:1.6;margin-bottom:15px}.link-list{gap:9px;margin-top:14px}.link-row{padding:11px;gap:9px}.sentinel-panel{padding:16px;margin-top:14px}.sentinel-panel h2{font-size:21px}.flow-card{gap:9px;padding:12px;margin-top:10px}.flow-card>svg{width:18px;height:18px;margin-top:2px}.memory-list{margin-top:18px;gap:14px}}
+
+
+/* Remove excess top whitespace on Lineage, Flow and Sentinel */
+.content-view{margin-top:4px!important;padding-top:0!important}
+.content-view:first-child{margin-top:4px!important}
+.content-view>.eyebrow:first-child{margin-top:0!important;padding-top:0!important}
+@media(max-width:600px){.content-view{margin-top:2px!important}}
