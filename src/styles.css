@@ -574,3 +574,30 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .memory-card>img.memory-media-preview{height:220px}
 .memory-card>video.memory-media-preview{height:auto;max-height:280px;background:#020810}
 .memory-card>audio.memory-audio-preview{height:54px;object-fit:contain;background:rgba(7,20,31,.9)}
+
+
+/* Facebook-style memory posts: full-width media, natural photo proportions, clean post footer. */
+.memory-list{max-width:760px;gap:22px}
+.memory-card{display:flex;flex-direction:column;gap:0;overflow:hidden;border:1px solid #294751;border-radius:16px;background:#091d29}
+.memory-card>.memory-media-preview,
+.memory-card>img.memory-media-preview,
+.memory-card>video.memory-media-preview{display:block;width:100%;height:auto;max-height:620px;min-height:0;object-fit:contain;object-position:center;background:#020b12;border-radius:0}
+.memory-card>img.memory-media-preview{aspect-ratio:auto}
+.memory-card>audio.memory-audio-preview{width:calc(100% - 28px);margin:14px;height:54px;border-radius:8px}
+.memory-copy{padding:16px 18px 12px}
+.memory-copy h3{font-size:21px;margin:5px 0 8px}
+.memory-copy p{font-size:14px;line-height:1.6;color:#c0d0d4;margin-bottom:12px}
+.memory-location-side{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:11px 18px;border-left:0;border-top:1px solid #294751;border-radius:0;background:#071721}
+.memory-location-side .eyebrow{font-size:9px}
+.memory-location-side strong,.memory-location-side>span:last-child{font-size:12px}
+.upload-preview{margin-top:12px;padding:0;overflow:hidden;border:1px solid #31535e;border-radius:12px;background:#020b12}
+.upload-preview>.eyebrow{padding:12px 14px 8px}
+.upload-preview img,.upload-preview video{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center;background:#020b12;border-radius:0}
+.upload-preview audio{display:block;width:calc(100% - 24px);margin:12px}
+@media(max-width:600px){
+ .memory-list{width:100%;max-width:100%;gap:16px}
+ .memory-card{border-radius:12px}
+ .memory-card>.memory-media-preview,.memory-card>img.memory-media-preview,.memory-card>video.memory-media-preview{max-height:520px}
+ .memory-copy{padding:14px}
+ .memory-location-side{padding:10px 14px}
+}
