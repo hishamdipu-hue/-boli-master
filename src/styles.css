@@ -1064,3 +1064,28 @@ input,select,textarea,button{max-width:100%}
   .content-view{max-width:860px}
 }
 
+
+
+/* Final login layout spacing: keep a clear, intentional gap between the shell artwork and login card. */
+.login-shell {
+  margin-bottom: 18px !important;
+}
+.auth-panel {
+  margin-top: 18px !important;
+}
+@media (max-width: 700px) {
+  .login-shell {
+    margin-bottom: 16px !important;
+  }
+  .auth-panel {
+    margin-top: 18px !important;
+  }
+}
+@media (max-width: 380px) {
+  .login-shell {
+    margin-bottom: 14px !important;
+  }
+  .auth-panel {
+    margin-top: 16px !important;
+  }
+}
