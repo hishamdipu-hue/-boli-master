@@ -298,3 +298,16 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .date-picker-card .historical-period-label { margin-top: 9px; }
 .date-reset-button { margin-top: 5px; padding: 7px 10px; border: 1px solid #806b42; border-radius: 9px; color: #efd59b; background: #302b20; font-size: 10px; }
 @media (max-width: 380px) { .date-picker-card { padding: 9px; } .date-picker-heading { align-items: flex-start; flex-direction: column; } .location-chips button { padding: 6px 8px; } }
+
+/* Simplified location section and clear island fallback */
+.location-picker { padding: 13px; border-color: #36736c; background: linear-gradient(145deg, #12363c, #091e2a 78%); }
+.location-picker .memory-type-label { align-items: center; margin-bottom: 12px; }
+.location-picker .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.location-picker select, .location-picker input { min-height: 42px; width: 100%; }
+.custom-island-field { padding: 9px 10px; margin: 8px 0 !important; border: 1px dashed #6bc6ae; border-radius: 10px; background: #0b292f; }
+.location-chips { gap: 6px; margin-top: 8px; }
+.location-chips button { min-height: 30px; transition: background .15s ease, border-color .15s ease; }
+.location-chips button.active { border-color: #8ce0c3; color: #06251f; background: #8ce0c3; }
+.location-chips button.clear-location { border-color: #806b42; color: #efd59b; }
+.location-helper { margin: 7px 0 0; color: #8eabb3; font-size: 10px; line-height: 1.45; }
+@media (max-width: 380px) { .location-picker .field-grid { grid-template-columns: 1fr; gap: 0; } }
