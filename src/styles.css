@@ -9,57 +9,55 @@
 .shell-artwork{isolation:isolate;overflow:visible}.shell-artwork:before,.shell-artwork:after{display:none}.shell-artwork .aura{display:none}.shell-image{position:relative;z-index:1;display:block;width:100%;height:100%;max-width:520px;object-fit:contain;object-position:center;filter:drop-shadow(0 18px 24px #0005)}.login-shell .shell-image{width:100%;height:100%;object-fit:contain}
 
 
-/* Shell sizing, background blending and gentle living pulse */
+/* Match the original Base44 shell reference: preserve its exact colors and proportions. */
 .shell-stage.shell-artwork {
   width: 100%;
-  max-width: 500px;
-  height: clamp(285px, 72vw, 430px);
-  margin: 8px auto 0;
+  max-width: 460px;
+  height: clamp(285px, 66vw, 400px);
+  margin: 4px auto 0;
   display: grid;
   place-items: center;
   isolation: isolate;
   overflow: visible;
 }
 .shell-stage.shell-artwork::before {
-  display: block;
   content: "";
+  display: block;
   position: absolute;
-  z-index: 0;
-  width: 64%;
+  z-index: -1;
+  width: 72%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(43, 238, 220, .23) 0%, rgba(44, 205, 192, .12) 38%, rgba(205, 158, 83, .08) 56%, transparent 72%);
-  filter: blur(13px);
+  background: radial-gradient(ellipse, rgba(61,231,219,.14) 0%, rgba(215,168,92,.10) 34%, transparent 70%);
+  filter: blur(15px);
   animation: boli-shell-pulse 3.8s ease-in-out infinite;
 }
 .shell-stage.shell-artwork::after { display: none; }
 .shell-stage .shell-image {
+  position: relative;
   z-index: 1;
+  display: block;
   width: 100%;
   height: 100%;
-  max-width: 500px;
+  max-width: 460px;
   object-fit: contain;
   object-position: center;
-  transform: scale(1.16);
-  mix-blend-mode: screen;
-  filter: drop-shadow(0 14px 25px rgba(0,0,0,.22));
-  animation: boli-shell-breathe 5.2s ease-in-out infinite;
+  transform: none;
+  mix-blend-mode: normal;
+  filter: none;
+  animation: none;
 }
-.login-shell { height: clamp(230px, 58vw, 330px); max-width: 390px; }
-.login-shell .shell-stage.shell-artwork { height: 100%; max-width: 390px; }
-.login-shell .shell-image { transform: scale(1.12); }
+.login-shell { height: clamp(200px, 55vw, 300px); max-width: 370px; }
+.login-shell .shell-stage.shell-artwork { height: 100%; max-width: 370px; }
+.login-shell .shell-image { transform: none; }
 @keyframes boli-shell-pulse {
-  0%, 100% { opacity: .55; transform: scale(.88); }
-  50% { opacity: 1; transform: scale(1.12); }
-}
-@keyframes boli-shell-breathe {
-  0%, 100% { transform: scale(1.13); }
-  50% { transform: scale(1.18); }
+  0%, 100% { opacity: .45; transform: scale(.92); }
+  50% { opacity: .9; transform: scale(1.06); }
 }
 @media (max-width: 420px) {
-  .shell-stage.shell-artwork { height: 290px; }
+  .shell-stage.shell-artwork { height: 280px; }
   .login-shell { height: 235px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .shell-stage.shell-artwork::before, .shell-stage .shell-image { animation: none; }
+  .shell-stage.shell-artwork::before { animation: none; }
 }
