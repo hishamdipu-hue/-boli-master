@@ -638,3 +638,10 @@ button:disabled { cursor: not-allowed; opacity: .58; }
 .resonance-shell{width:17px;height:17px;font-size:11px;border-color:#73cdb5}
 .resonance-active .resonance-shell{box-shadow:0 0 8px rgba(127,213,185,.28)}
 .resonance-count{font-size:10px}
+
+/* Truly compact shell reaction: override global 40px button minimum */
+.flow-card .resonance-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;padding-top:7px}
+.flow-card button.resonance-button{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:0!important;height:27px;padding:2px 7px;border-radius:7px;font-size:10px;line-height:1;box-shadow:none}
+.flow-card button.resonance-button:hover{transform:translateY(-1px);box-shadow:0 0 9px rgba(90,211,177,.16)}
+.flow-card .resonance-shell{width:15px;height:15px;flex:0 0 15px;font-size:10px}
+.flow-card .resonance-count{font-size:9px}
