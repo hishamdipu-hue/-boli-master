@@ -935,3 +935,38 @@ input,select,textarea,button{max-width:100%}
 @media (max-width: 380px) {
   .auth-panel { margin-top: 24px !important; }
 }
+
+
+/* Compact, distinctive BOLI memory action */
+.vessel-view .memory-button {
+  display: inline-flex;
+  width: auto;
+  max-width: min(100%, 280px);
+  min-height: 38px;
+  margin: 0 auto;
+  padding: 9px 15px;
+  gap: 7px;
+  border: 1px solid rgba(218, 184, 112, .78);
+  border-radius: 999px;
+  background: linear-gradient(115deg, #153b40 0%, #0b2937 58%, #172d38 100%);
+  color: #e4cf9d;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .025em;
+  line-height: 1.2;
+  box-shadow: 0 0 0 3px rgba(101, 203, 181, .055), 0 5px 18px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255,255,255,.07);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.vessel-view .memory-button:hover {
+  border-color: #8ce0c5;
+  color: #f5e5bd;
+  box-shadow: 0 0 0 3px rgba(101, 203, 181, .1), 0 0 20px rgba(78, 214, 192, .13);
+  transform: translateY(-1px);
+}
+.vessel-view .memory-button:focus-visible {
+  outline: 2px solid #8ce0c5;
+  outline-offset: 4px;
+}
+@media (max-width: 420px) {
+  .vessel-view .memory-button { width: auto; max-width: 100%; padding: 9px 13px; font-size: 11px; }
+}
