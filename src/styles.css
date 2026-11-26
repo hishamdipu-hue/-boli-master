@@ -2114,3 +2114,15 @@ label { line-height: 1.45; letter-spacing: .01em; }
 .boli-pulse-total span{font-size:11px;color:rgba(220,237,235,.65);}
 @keyframes living-cowrie-breathe{0%,100%{filter:drop-shadow(0 0 13px rgba(75,229,211,.18));}50%{filter:drop-shadow(0 0 27px rgba(75,229,211,.48));}}
 @media(prefers-reduced-motion:reduce){.boli-living-shell-art{animation:none;transition:none;}}
+
+
+/* Compact Heritage Pulse emblem: small, legible, and visibly animated. */
+.boli-living-shell{min-height:0!important;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:14px;padding:14px 10px!important;}
+.boli-living-shell-art{width:58px;height:58px;flex:0 0 58px;aspect-ratio:1;display:grid;place-items:center;font-size:43px;line-height:1;transform:scale(var(--shell-growth,1));transform-origin:center;animation:cowrie-pulse 2.2s ease-in-out infinite!important;filter:drop-shadow(0 0 8px rgba(79,226,209,.35));}
+.boli-pulse-total{align-items:flex-start;text-align:left;}
+.boli-pulse-total strong{font-size:22px;}
+.boli-pulse-total small{font-size:8px;letter-spacing:.12em;}
+.boli-pulse-total span{font-size:10px;}
+@keyframes cowrie-pulse{0%,100%{transform:scale(var(--shell-growth,1)) rotate(-4deg);filter:drop-shadow(0 0 5px rgba(79,226,209,.24));}50%{transform:scale(calc(var(--shell-growth,1) * 1.09)) rotate(4deg);filter:drop-shadow(0 0 15px rgba(79,226,209,.65));}}
+@media(max-width:420px){.boli-living-shell{gap:10px}.boli-living-shell-art{width:48px;height:48px;flex-basis:48px;font-size:36px}.boli-pulse-total strong{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.boli-living-shell-art{animation:none!important;}}
