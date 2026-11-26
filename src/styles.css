@@ -2102,3 +2102,15 @@ label { line-height: 1.45; letter-spacing: .01em; }
   .lineage-generation-nodes:has(> .lineage-person-node:nth-child(2))::before { top:7px; }
   .lineage-generation-nodes > .lineage-person-node::before { top:-16px; height:15px; }
 }
+
+
+/* Heritage Pulse: the Living Cowrie grows gently with shared BOLI. */
+.boli-living-shell{min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:18px 12px 14px;}
+.boli-living-shell-art{position:relative;width:clamp(116px,34vw,170px);aspect-ratio:1;display:grid;place-items:center;transform:scale(var(--shell-growth,1));transform-origin:center;transition:transform 900ms cubic-bezier(.2,.75,.2,1);filter:drop-shadow(0 0 18px rgba(75,229,211,.24));animation:living-cowrie-breathe 4.8s ease-in-out infinite;}
+.boli-living-shell-art img{width:100%;height:100%;object-fit:contain;}
+.boli-pulse-total{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;position:relative;z-index:2;}
+.boli-pulse-total strong{font-size:clamp(22px,6vw,30px);letter-spacing:.04em;color:#e8d8a4;text-shadow:0 0 16px rgba(226,190,104,.2);}
+.boli-pulse-total small{font-size:9px;letter-spacing:.18em;color:#91dcd2;}
+.boli-pulse-total span{font-size:11px;color:rgba(220,237,235,.65);}
+@keyframes living-cowrie-breathe{0%,100%{filter:drop-shadow(0 0 13px rgba(75,229,211,.18));}50%{filter:drop-shadow(0 0 27px rgba(75,229,211,.48));}}
+@media(prefers-reduced-motion:reduce){.boli-living-shell-art{animation:none;transition:none;}}
