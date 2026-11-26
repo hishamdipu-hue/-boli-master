@@ -1947,34 +1947,38 @@ label { line-height: 1.45; letter-spacing: .01em; }
 @media(max-width:480px){.friend-list-card{gap:9px;padding:10px}.friend-list-avatar{flex-basis:39px;width:39px;height:39px}.friend-list-card .message-open-button{padding:7px 9px}}
 
 
-/* Compact friend invitation field: keep the email box visually secondary. */
-.friend-request-form {
+/* Friend request email: compact single-line field, including on mobile. */
+.friend-request-panel .friend-request-form {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   gap: 8px;
-  width: min(100%, 470px);
-  margin-top: 12px;
+  width: min(100%, 430px);
+  margin-top: 10px;
 }
-.friend-request-form input {
-  flex: 0 1 260px;
-  width: 260px;
+.friend-request-panel .friend-request-form input[type="email"] {
+  box-sizing: border-box;
+  flex: 0 1 230px;
+  width: 230px;
   max-width: 100%;
   min-width: 0;
-  height: 40px;
-  min-height: 40px;
-  padding: 8px 11px;
-  border-radius: 10px;
+  height: 34px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: 9px;
   font-size: 12px;
+  line-height: 1.2;
 }
-.friend-request-form button {
+.friend-request-panel .friend-request-form button {
   flex: 0 0 auto;
-  min-height: 40px;
-  padding: 8px 12px;
+  min-height: 34px;
+  padding: 6px 11px;
   font-size: 11px;
 }
 @media(max-width:560px) {
-  .friend-request-form { flex-wrap: wrap; flex-direction: row; }
-  .friend-request-form input { flex: 1 1 190px; width: auto; }
-  .friend-request-form button { width: auto; }
+  .friend-request-panel .friend-request-form { flex-wrap: wrap; }
+  .friend-request-panel .friend-request-form input[type="email"] {
+    flex: 1 1 170px;
+    width: auto;
+  }
 }
