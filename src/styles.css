@@ -1496,3 +1496,39 @@ label { line-height: 1.45; letter-spacing: .01em; }
   .shell-stage.shell-artwork .shell-image,
   .login-shell .shell-stage.shell-artwork .shell-image { animation: none !important; }
 }
+
+
+/* BOLI points wallet */
+.boli-wallet-card {
+  width: min(100%, 680px);
+  margin: 0 auto 26px;
+  padding: clamp(17px, 3vw, 23px);
+  display: grid;
+  grid-template-columns: 1fr minmax(190px, .9fr);
+  gap: 18px;
+  text-align: left;
+  border: 1px solid rgba(54, 226, 211, .28);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(13, 64, 66, .58), rgba(8, 26, 37, .9));
+  box-shadow: inset 0 1px rgba(255,255,255,.04), 0 14px 36px rgba(0,0,0,.16);
+}
+.boli-wallet-balance {
+  display: block;
+  margin: 7px 0 3px;
+  color: #f3d58b;
+  font-size: clamp(30px, 5vw, 42px);
+  letter-spacing: -.04em;
+  line-height: 1.1;
+}
+.boli-wallet-balance small { font-size: 13px; letter-spacing: .12em; }
+.boli-wallet-card p { margin: 7px 0 0; color: rgba(222,238,235,.72); font-size: 12px; line-height: 1.55; }
+.boli-wallet-history { display: flex; flex-direction: column; gap: 8px; padding-left: 16px; border-left: 1px solid rgba(117,211,203,.18); }
+.boli-wallet-history > strong { color: #d7e9e5; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.boli-wallet-history > small { color: rgba(222,238,235,.58); font-size: 11px; line-height: 1.5; }
+.boli-ledger-row { display: flex; justify-content: space-between; gap: 8px; color: rgba(222,238,235,.76); font-size: 11px; }
+.boli-ledger-row b { white-space: nowrap; color: #74dfbd; }
+.boli-ledger-row b.negative { color: #e6a18c; }
+@media (max-width: 560px) {
+  .boli-wallet-card { grid-template-columns: 1fr; gap: 14px; }
+  .boli-wallet-history { padding: 13px 0 0; border-left: 0; border-top: 1px solid rgba(117,211,203,.18); }
+}
