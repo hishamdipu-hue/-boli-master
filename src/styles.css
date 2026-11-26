@@ -2187,25 +2187,3 @@ label { line-height: 1.45; letter-spacing: .01em; }
   .friend-request-form input { flex-basis: 100%; max-width: 100%; }
   .friend-request-form button { align-self: flex-start; }
 }
-
-
-/* Personal vessel profile tools */
-.vessel-profile-tools{display:flex;align-items:center;justify-content:center;gap:14px;margin:18px auto 8px;max-width:540px;text-align:left}
-.vessel-avatar-edit{position:relative;display:grid;place-items:center;flex:0 0 58px;width:58px;height:58px;border:1px solid rgba(222,190,111,.65);border-radius:50%;background:radial-gradient(circle at 35% 25%,rgba(92,220,211,.2),rgba(10,25,37,.94));color:#d8c18a;cursor:pointer;overflow:hidden;box-shadow:0 0 20px rgba(72,206,196,.12)}
-.vessel-avatar-edit input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-.vessel-avatar-edit img{width:100%;height:100%;object-fit:cover}
-.vessel-avatar-edit>span{position:absolute;right:-1px;bottom:-1px;display:grid;place-items:center;width:23px;height:23px;border:2px solid #0a1721;border-radius:50%;background:#bca36b;color:#07131c}
-.vessel-profile-identity{min-width:0}
-.vessel-profile-identity .vessel-name{margin:0;text-align:left}
-.vessel-profile-identity .vessel-subtitle{margin:5px 0 0;text-align:left}
-.vessel-status-composer{display:flex;gap:11px;align-items:flex-start;width:min(100%,540px);margin:18px auto 24px;padding:14px;border:1px solid rgba(190,210,220,.16);border-radius:17px;background:linear-gradient(135deg,rgba(18,43,53,.84),rgba(8,20,31,.9));box-shadow:inset 0 1px rgba(255,255,255,.035)}
-.status-composer-mark{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:10px;background:rgba(83,205,195,.12);color:#72d8cf}
-.status-composer-body{flex:1;min-width:0}
-.status-composer-body>label{display:block;margin:1px 0 8px;color:#d8c18a;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.status-composer-body textarea{display:block;width:100%;min-height:48px;resize:vertical;border:0;outline:0;background:transparent;color:inherit;font:inherit;font-size:14px;line-height:1.5;padding:0}
-.status-composer-body textarea::placeholder{color:rgba(215,226,232,.46)}
-.status-composer-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px;padding-top:10px;border-top:1px solid rgba(190,210,220,.12)}
-.status-composer-footer>span{color:rgba(215,226,232,.56);font-size:10px}
-.status-composer-footer button{flex:0 0 auto;border:1px solid rgba(114,216,207,.35);border-radius:999px;background:rgba(83,205,195,.12);color:#a6eee6;padding:7px 12px;font-size:11px;font-weight:700;cursor:pointer}
-.status-composer-footer button:disabled{opacity:.42;cursor:default}
-@media(max-width:560px){.vessel-profile-tools{justify-content:flex-start;gap:12px;margin:14px auto 8px;padding:0 4px}.vessel-avatar-edit{width:52px;height:52px;flex-basis:52px}.vessel-profile-identity .vessel-name{font-size:clamp(22px,6vw,30px)}.vessel-status-composer{margin:14px auto 20px;padding:12px}.status-composer-footer>span{font-size:9px}}
