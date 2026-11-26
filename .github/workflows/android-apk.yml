@@ -43,6 +43,28 @@ jobs:
       - name: Generate Android project
         run: npx cap add android
 
+      - name: Register BOLI authentication deep link
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          path = 'android/app/src/main/AndroidManifest.xml'
+          tree = ET.parse(path)
+          root = tree.getroot()
+          ns = {'android': 'http://schemas.android.com/apk/res/android'}
+          activity = root.find(".//activity[@android:name='.MainActivity']", ns)
+          if activity is None:
+              activity = root.find('.//activity', ns)
+          if activity is None:
+              raise SystemExit('Main Android activity was not found')
+          activity.set('{http://schemas.android.com/apk/res/android}launchMode', 'singleTask')
+          intent = ET.SubElement(activity, 'intent-filter')
+          ET.SubElement(intent, 'action', {'{http://schemas.android.com/apk/res/android}name': 'android.intent.action.VIEW'})
+          ET.SubElement(intent, 'category', {'{http://schemas.android.com/apk/res/android}name': 'android.intent.category.DEFAULT'})
+          ET.SubElement(intent, 'category', {'{http://schemas.android.com/apk/res/android}name': 'android.intent.category.BROWSABLE'})
+          ET.SubElement(intent, 'data', {'{http://schemas.android.com/apk/res/android}scheme': 'com.boli.vessel', '{http://schemas.android.com/apk/res/android}host': 'auth', '{http://schemas.android.com/apk/res/android}path': '/callback'})
+          tree.write(path, encoding='utf-8', xml_declaration=True)
+          PY
+
       - name: Sync BOLI into Android
         run: npx cap sync android
 
