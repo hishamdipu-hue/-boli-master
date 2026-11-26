@@ -2222,3 +2222,48 @@ label { line-height: 1.45; letter-spacing: .01em; }
 .profile-picture-change{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:8px 13px;border:1px solid rgba(111,229,220,.3);border-radius:999px;background:rgba(67,160,153,.09);color:#b9f1e8;font-size:12px;cursor:pointer}
 .profile-picture-change:disabled{opacity:.55;cursor:wait}
 @media(max-width:600px){.user-corner-button{width:46px;height:46px}.shell-profile-photo{width:72px;height:72px}}
+
+
+/* Sentinel friend email field: keep it a short, horizontal bar on every screen. */
+.content-view .friend-request-panel .friend-request-form {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.content-view .friend-request-panel .friend-request-form input[type="email"] {
+  display: block !important;
+  flex: 1 1 220px !important;
+  width: auto !important;
+  max-width: 360px !important;
+  min-width: 0 !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  margin: 0 !important;
+  padding: 0 12px !important;
+  line-height: 40px !important;
+  font-size: 13px !important;
+  border-radius: 9px !important;
+}
+.content-view .friend-request-panel .friend-request-form button {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-height: 42px !important;
+  height: 42px !important;
+  margin: 0 !important;
+  padding: 0 13px !important;
+}
+@media (max-width: 560px) {
+  .content-view .friend-request-panel .friend-request-form {
+    flex-wrap: wrap !important;
+  }
+  .content-view .friend-request-panel .friend-request-form input[type="email"] {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
