@@ -1212,3 +1212,73 @@ input,select,textarea,button{max-width:100%}
   border-color: rgba(228,77,104,.4);
   background: rgba(228,77,104,.055);
 }
+
+
+/* Mobile layout repair: prevent long member names and memory content from overflowing. */
+.vessel-view,
+.vessel-view > * { min-width: 0; max-width: 100%; }
+.vessel-name {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2px;
+  font-size: clamp(27px, 7.2vw, 54px);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+.vessel-subtitle {
+  max-width: 100%;
+  margin: 10px auto 24px;
+  padding: 0 8px;
+  line-height: 1.45;
+}
+.vessel-view .shell-stage {
+  max-width: 100%;
+  margin-inline: auto;
+}
+.memory-copy,
+.flow-post-content { min-width: 0; }
+.memory-copy p,
+.flow-post-content > p {
+  margin: 0 0 10px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.memory-copy h3,
+.flow-post-content h3 {
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+.memory-location-side { min-width: 0; }
+.memory-location-side strong,
+.memory-location-side span { overflow-wrap: anywhere; }
+.national-flow-card .flow-media { max-height: 440px; }
+.national-flow-card .flow-post-content { padding: 14px 16px 16px; }
+.national-flow-card .flow-author { margin-bottom: 10px; }
+.national-flow-card .flow-post-content h3 { margin: 4px 0 8px; }
+.national-flow-card .flow-post-content > p { margin-bottom: 8px; }
+.national-flow-card .resonance-row { margin-top: 8px; padding-top: 8px; }
+@media (max-width: 600px) {
+  .app-shell { overflow-x: clip; padding-left: 14px; padding-right: 14px; }
+  .vessel-view { padding-top: 18px; }
+  .vessel-view .shell-caption { margin-bottom: 4px; }
+  .vessel-view .shell-stage { height: clamp(205px, 56vw, 285px); }
+  .vessel-name { font-size: clamp(25px, 7.1vw, 39px); }
+  .vessel-subtitle { font-size: 13px; margin-bottom: 20px; }
+  .memory-button { max-width: 100%; padding: 14px 16px; font-size: 13px; }
+  .content-view { padding-inline: 0; }
+  .national-flow-card .flow-media { max-height: 380px; }
+  .national-flow-card .flow-post-content { padding: 12px 13px 14px; }
+  .national-flow-card .flow-author { gap: 9px; }
+  .national-flow-card .flow-author-avatar { width: 42px; height: 42px; }
+  .national-flow-card .flow-post-content h3 { font-size: 18px; }
+  .bottom-nav { padding: 7px 6px calc(7px + env(safe-area-inset-bottom)); }
+  .nav-item { gap: 3px; padding: 3px 2px; font-size: 10px; }
+}
+@media (max-width: 360px) {
+  .vessel-name { font-size: clamp(23px, 6.7vw, 27px); }
+  .app-shell { padding-left: 10px; padding-right: 10px; }
+  .national-flow-card .flow-post-content { padding-inline: 11px; }
+}
