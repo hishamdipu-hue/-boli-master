@@ -1532,3 +1532,29 @@ label { line-height: 1.45; letter-spacing: .01em; }
   .boli-wallet-card { grid-template-columns: 1fr; gap: 14px; }
   .boli-wallet-history { padding: 13px 0 0; border-left: 0; border-top: 1px solid rgba(117,211,203,.18); }
 }
+
+/* BOLI Heritage Economy */
+.boli-lifetime-score{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:11px;border-top:1px solid rgba(117,211,203,.18);color:rgba(222,238,235,.72);font-size:12px}
+.boli-lifetime-score strong{color:#f3d58b;font-size:18px}
+.boli-heritage-level,.boli-heritage-fund{width:min(100%,680px);margin:0 auto 18px;padding:19px clamp(16px,3vw,22px);border:1px solid rgba(54,226,211,.2);border-radius:17px;background:linear-gradient(145deg,rgba(12,47,55,.8),rgba(7,22,34,.94));text-align:left}
+.boli-level-heading,.boli-fund-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.boli-level-heading h3,.boli-fund-heading h3{margin:5px 0 0;color:#f0dfb7;font-size:20px}
+.boli-level-score{color:#83d9cc;font-size:11px;white-space:nowrap}
+.boli-level-track{height:7px;margin:15px 0 8px;overflow:hidden;border-radius:20px;background:rgba(255,255,255,.09)}
+.boli-level-track span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#36bcb4,#f0cf83);transition:width .35s ease}
+.boli-heritage-level>p,.boli-fund-intro{margin:8px 0 0;color:rgba(222,238,235,.7);font-size:12px;line-height:1.55}
+.boli-milestone-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.boli-milestone-chips span{padding:6px 9px;border:1px solid rgba(255,255,255,.1);border-radius:30px;color:rgba(222,238,235,.45);font-size:10px}
+.boli-milestone-chips span.earned{border-color:rgba(240,207,131,.4);background:rgba(240,207,131,.1);color:#f3d58b}
+.boli-fund-mark{color:#f3d58b;font-size:25px}
+.boli-fund-project{margin-top:14px;padding-top:14px;border-top:1px solid rgba(117,211,203,.17)}
+.boli-fund-project h4{margin:0;color:#f0dfb7;font-size:16px}
+.boli-fund-project>p{margin:7px 0 12px;color:rgba(222,238,235,.68);font-size:12px;line-height:1.55}
+.boli-fund-total{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.boli-fund-total strong{color:#78e0c2;font-size:18px}
+.boli-fund-total span{color:rgba(222,238,235,.55);font-size:11px}
+.boli-fund-contribute{display:grid;grid-template-columns:1fr 110px auto;align-items:end;gap:9px;margin-top:14px}
+.boli-fund-contribute label{grid-column:1/-1;color:rgba(222,238,235,.72);font-size:11px}
+.boli-fund-contribute input{min-width:0;width:100%;padding:11px 12px;border:1px solid rgba(117,211,203,.22);border-radius:10px;background:rgba(0,0,0,.2);color:#eef7f2}
+.boli-fund-contribute .primary-button{min-height:42px;padding:0 14px;white-space:nowrap}
+@media(max-width:480px){.boli-fund-contribute{grid-template-columns:1fr 1fr}.boli-fund-contribute label{grid-column:1/-1}.boli-fund-contribute .primary-button{grid-column:1/-1}}
