@@ -1573,3 +1573,27 @@ label { line-height: 1.45; letter-spacing: .01em; }
 .boli-fund-project h4{font-family:'Playfair Display',Georgia,serif;font-size:18px}
 .boli-fund-contribute .primary-button{letter-spacing:.01em}
 @media(prefers-reduced-motion:reduce){.boli-pulse-core,.boli-pulse-ring{animation:none}}
+
+/* BOLI Marketplace — rewards funded by earned preservation points. */
+.boli-marketplace{width:min(100%,680px);margin:0 auto 26px;padding:clamp(18px,3vw,23px);border:1px solid rgba(240,207,131,.2);border-radius:18px;background:linear-gradient(145deg,rgba(31,42,46,.78),rgba(7,22,34,.96));text-align:left}
+.boli-marketplace-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.boli-marketplace-heading h3{margin:5px 0 0;color:#f0dfb7;font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:500}
+.boli-marketplace-mark{color:#f3d58b;font-size:25px}
+.boli-marketplace-intro{margin:10px 0 17px;color:rgba(222,238,235,.72);font-size:12px;line-height:1.65}
+.boli-reward-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.boli-reward-card{min-width:0;overflow:hidden;border:1px solid rgba(117,211,203,.17);border-radius:15px;background:rgba(3,17,27,.48)}
+.boli-reward-art{display:grid;place-items:center;height:86px;background:radial-gradient(circle at 50% 65%,rgba(54,193,174,.22),rgba(9,31,41,.15) 68%);border-bottom:1px solid rgba(117,211,203,.12)}
+.boli-reward-art span{color:#f3d58b;font-size:34px;text-shadow:0 0 24px rgba(243,213,139,.22)}
+.boli-reward-copy{padding:13px}
+.boli-reward-copy h4{margin:5px 0 7px;color:#f0dfb7;font-family:'Playfair Display',Georgia,serif;font-size:17px;line-height:1.2}
+.boli-reward-copy p{margin:0;color:rgba(222,238,235,.67);font-size:11px;line-height:1.55}
+.boli-reward-partner{display:block;margin-top:8px;color:#82d8c8;font-size:10px}
+.boli-reward-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:9px;margin-top:14px;padding-top:11px;border-top:1px solid rgba(117,211,203,.14)}
+.boli-reward-footer>strong{color:#f3d58b;font-size:13px;white-space:nowrap}
+.boli-reward-footer .primary-button{min-height:37px;padding:8px 11px;font-size:11px}
+.boli-coming-soon{padding:7px 9px;border:1px solid rgba(240,207,131,.25);border-radius:30px;color:#e8cc91;font-size:10px;white-space:nowrap}
+.boli-marketplace-empty{grid-column:1/-1;padding:20px 14px;border:1px dashed rgba(117,211,203,.2);border-radius:12px;color:rgba(222,238,235,.66);font-size:12px;text-align:center;line-height:1.6}
+.boli-redemption-history{display:flex;flex-direction:column;gap:9px;margin-top:17px;padding-top:14px;border-top:1px solid rgba(117,211,203,.15)}
+.boli-redemption-history>strong{color:#d7e9e5;font-size:12px;letter-spacing:.07em;text-transform:uppercase}
+.boli-marketplace-note{display:block;margin-top:14px;color:rgba(222,238,235,.48);font-size:10px;line-height:1.55}
+@media(max-width:460px){.boli-reward-grid{grid-template-columns:1fr}.boli-reward-card{display:grid;grid-template-columns:82px minmax(0,1fr)}.boli-reward-art{height:100%;min-height:130px;border-bottom:0;border-right:1px solid rgba(117,211,203,.12)}.boli-reward-copy{padding:11px}.boli-reward-copy h4{font-size:16px}.boli-reward-footer{align-items:flex-start;flex-direction:column}.boli-reward-footer .primary-button{width:100%}}
