@@ -1814,3 +1814,110 @@ label { line-height: 1.45; letter-spacing: .01em; }
   .resonance-count { align-self: center; }
   .friend-request-row { flex-wrap: wrap; }
 }
+
+
+/* Social-card layout pass 2: selectors match the live App.jsx markup. */
+.content-view {
+  width: min(100% - 28px, 700px);
+  margin: 20px auto 34px;
+}
+.content-view > h1 { font-size: clamp(27px, 6vw, 34px); letter-spacing: -.025em; }
+.content-view > .muted { color: rgba(220,235,233,.68); line-height: 1.6; }
+.vessel-view {
+  width: min(100% - 28px, 700px);
+  margin: 12px auto 30px;
+}
+.vessel-view > .boli-wallet-card,
+.vessel-view > .boli-heritage-level,
+.vessel-view > .boli-heritage-fund,
+.vessel-view > .boli-marketplace,
+.vessel-view > .memory-list,
+.content-view > .lineage-map,
+.content-view > .sentinel-panel,
+.content-view > .friend-request-panel,
+.content-view > .private-chat-panel,
+.content-view > .empty-state {
+  border: 1px solid rgba(151,190,194,.19);
+  border-radius: 18px;
+  background: linear-gradient(155deg, rgba(17,39,52,.97), rgba(7,21,33,.98));
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+.vessel-view > .boli-wallet-card,
+.vessel-view > .boli-heritage-level,
+.vessel-view > .boli-heritage-fund,
+.vessel-view > .boli-marketplace { padding: 18px; }
+.vessel-view > .memory-list {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+}
+.memory-card {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 132px;
+  overflow: hidden;
+  border: 1px solid rgba(151,190,194,.17);
+  border-radius: 15px;
+  background: rgba(3,15,25,.55);
+  box-shadow: 0 7px 20px rgba(0,0,0,.16);
+}
+.memory-card .memory-media-preview,
+.memory-card .memory-image-placeholder { grid-column: 1 / -1; width:100%; max-height:360px; object-fit:cover; }
+.memory-card .memory-copy { grid-column: 1; grid-row: auto; }
+.memory-card .memory-location-side { grid-column: 2; grid-row: 2; }
+.content-view.flow-view { width:min(100% - 28px, 680px); }
+.flow-feed-heading {
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  margin:18px 0 12px; padding:12px 14px;
+  border:1px solid rgba(151,190,194,.16); border-radius:13px;
+  background:rgba(255,255,255,.035);
+}
+.flow-card {
+  margin:0 0 15px; overflow:hidden;
+  border:1px solid rgba(151,190,194,.2); border-radius:17px;
+  background:linear-gradient(155deg,rgba(17,39,52,.98),rgba(7,21,33,.99));
+  box-shadow:0 12px 28px rgba(0,0,0,.2);
+}
+.flow-post-content { padding:16px; }
+.lineage-map { margin-top:18px; }
+.lineage-map-heading { padding-bottom:14px; border-bottom:1px solid rgba(151,190,194,.14); }
+.lineage-tree-root,
+.lineage-branch-card,
+.friend-request-row,
+.link-row {
+  border:1px solid rgba(151,190,194,.16);
+  border-radius:14px;
+  background:rgba(255,255,255,.035);
+}
+.lineage-tree-root { padding:14px; }
+.lineage-branch-card { box-shadow:0 5px 16px rgba(0,0,0,.13); }
+.sentinel-panel,
+.friend-request-panel,
+.private-chat-panel,
+.empty-state { margin-top:14px; }
+.sentinel-panel { display:grid; gap:9px; }
+.friend-request-panel h3 { display:flex; align-items:center; gap:9px; }
+.friend-request-form { display:flex; flex-wrap:wrap; gap:9px; }
+.friend-request-form input { flex:1 1 190px; min-width:0; }
+.friend-request-row { padding:12px; margin-top:10px; }
+.private-chat-panel { padding:15px; }
+.private-chat-messages {
+  margin:14px 0; padding:12px;
+  border:1px solid rgba(151,190,194,.13); border-radius:14px;
+  background:rgba(0,0,0,.14);
+}
+.private-message { padding:10px 12px; border-radius:14px; }
+.private-message.mine { background:rgba(49,153,143,.2); }
+.private-message.theirs { background:rgba(255,255,255,.07); }
+@media(max-width:560px) {
+  .content-view,.vessel-view,.content-view.flow-view { width:calc(100% - 22px); }
+  .vessel-view > .boli-wallet-card,
+  .vessel-view > .boli-heritage-level,
+  .vessel-view > .boli-heritage-fund,
+  .vessel-view > .boli-marketplace { padding:14px; }
+  .vessel-view > .memory-list { padding:9px; }
+  .memory-card { grid-template-columns:minmax(0,1fr); }
+  .memory-card .memory-location-side { grid-column:1; grid-row:auto; }
+  .flow-post-content { padding:14px; }
+  .friend-request-form { flex-direction:column; }
+  .friend-request-form input,.friend-request-form button { width:100%; }
+}
