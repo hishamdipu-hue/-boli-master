@@ -2073,7 +2073,7 @@ label { line-height: 1.45; letter-spacing: .01em; }
 /* Visible family-tree branches: shared horizontal rails and individual vertical connectors */
 .lineage-generation-nodes { position:relative; padding-top:16px; }
 .lineage-generation-nodes:has(> .lineage-person-node:nth-child(2))::before {
-  content:""; position:absolute; top:7px; left:calc(50% / var(--tree-count, 1)); right:calc(50% / var(--tree-count, 1));
+  content:""; position:absolute; top:7px; left:10%; right:10%;
   height:1px; background:linear-gradient(90deg,rgba(105,222,204,.12),rgba(105,222,204,.72),rgba(105,222,204,.12));
 }
 .lineage-generation-nodes > .lineage-person-node { position:relative; }
