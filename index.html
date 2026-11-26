@@ -2,13 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#07111f" />
-    <meta name="description" content="BOLI — vessel lineage and cultural memory." />
-    <title>BOLI — Vessel Lineage</title>
+    <meta name="description" content="BOLI — a digital vessel for preserving Maldivian culture, stories and memories." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BOLI" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/boli-icon.svg" />
+    <link rel="apple-touch-icon" href="/boli-icon.svg" />
+    <title>BOLI — Maldivian Cultural Memory</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch((error) => {
+            console.error("BOLI offline support could not be registered:", error);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
