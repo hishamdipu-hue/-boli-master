@@ -1597,3 +1597,220 @@ label { line-height: 1.45; letter-spacing: .01em; }
 .boli-redemption-history>strong{color:#d7e9e5;font-size:12px;letter-spacing:.07em;text-transform:uppercase}
 .boli-marketplace-note{display:block;margin-top:14px;color:rgba(222,238,235,.48);font-size:10px;line-height:1.55}
 @media(max-width:460px){.boli-reward-grid{grid-template-columns:1fr}.boli-reward-card{display:grid;grid-template-columns:82px minmax(0,1fr)}.boli-reward-art{height:100%;min-height:130px;border-bottom:0;border-right:1px solid rgba(117,211,203,.12)}.boli-reward-copy{padding:11px}.boli-reward-copy h4{font-size:16px}.boli-reward-footer{align-items:flex-start;flex-direction:column}.boli-reward-footer .primary-button{width:100%}}
+
+
+/* BOLI social preview refresh — familiar, readable feed cards across every section.
+   Keeps Vessel private and Flow public; presentation only, no visibility or data changes. */
+:root {
+  --boli-card-bg: rgba(12, 29, 41, .92);
+  --boli-card-border: rgba(151, 190, 194, .16);
+  --boli-card-muted: rgba(215, 232, 230, .62);
+  --boli-card-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+}
+.content-view {
+  width: min(100%, 760px);
+  margin: 24px auto 34px;
+}
+.content-view > .eyebrow,
+.flow-feed-heading {
+  padding-inline: 3px;
+}
+.content-view > h1 {
+  margin-top: 7px;
+  margin-bottom: 8px;
+}
+.content-view > .muted {
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.memory-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+.memory-card,
+.flow-card,
+.sentinel-panel,
+.friend-request-panel,
+.lineage-map,
+.private-chat-panel,
+.empty-state,
+.boli-wallet-card,
+.boli-heritage-level,
+.boli-heritage-fund,
+.boli-marketplace {
+  border: 1px solid var(--boli-card-border);
+  border-radius: 17px;
+  background: var(--boli-card-bg);
+  box-shadow: var(--boli-card-shadow);
+}
+.memory-card,
+.flow-card {
+  overflow: hidden;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.memory-card:hover,
+.flow-card:hover {
+  border-color: rgba(93, 214, 203, .35);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .24);
+}
+.memory-card-photo-open,
+.flow-card[role="button"] { cursor: pointer; }
+.memory-card-photo-open:focus-visible,
+.flow-card[role="button"]:focus-visible {
+  outline: 2px solid #75e2d7;
+  outline-offset: 3px;
+}
+.memory-card .memory-media-preview,
+.flow-card .flow-media {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  background: rgba(0, 0, 0, .22);
+}
+.memory-card .memory-image-placeholder {
+  min-height: 130px;
+  background: radial-gradient(ellipse at center, rgba(46, 160, 150, .15), rgba(4, 20, 31, .5));
+}
+.memory-copy,
+.flow-post-content {
+  min-width: 0;
+  padding: 15px 17px 17px;
+}
+.memory-copy h3,
+.flow-post-content h3 {
+  margin: 5px 0 7px;
+  color: #f1e8d4;
+  font-size: 20px;
+  line-height: 1.25;
+}
+.memory-copy p,
+.flow-post-content > p {
+  margin: 0 0 11px;
+  color: rgba(229, 239, 235, .84);
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.memory-copy > small,
+.memory-location-side > span:last-child {
+  color: var(--boli-card-muted);
+  font-size: 10px;
+}
+.memory-location-side {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px 15px;
+  border-left: 1px solid rgba(151, 190, 194, .12);
+  background: rgba(255, 255, 255, .018);
+}
+.memory-location-side strong { color: #e7d4a5; font-size: 12px; }
+.flow-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.flow-author-avatar {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid rgba(116, 220, 207, .32);
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(43, 142, 135, .38), rgba(15, 34, 48, .95));
+  color: #f0d79c;
+  font-weight: 700;
+}
+.flow-author > div { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.flow-author > div strong { color: #e9e8dc; font-size: 12px; }
+.flow-author > div small { color: var(--boli-card-muted); font-size: 10px; }
+.flow-post-content > small { color: var(--boli-card-muted); font-size: 10px; }
+.resonance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px solid rgba(151, 190, 194, .13);
+}
+.resonance-button {
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 1px solid rgba(103, 208, 195, .23);
+  border-radius: 22px;
+  background: rgba(48, 151, 142, .1);
+}
+.resonance-count { color: var(--boli-card-muted); font-size: 10px; }
+.sentinel-panel,
+.friend-request-panel,
+.lineage-map,
+.private-chat-panel,
+.empty-state {
+  padding: clamp(16px, 3vw, 22px);
+}
+.sentinel-panel h2,
+.friend-request-panel h3,
+.lineage-map-heading,
+.private-chat-heading h3 {
+  color: #f0e6d0;
+}
+.friend-request-row,
+.link-row,
+.lineage-branch-card {
+  border: 1px solid rgba(151, 190, 194, .13);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, .025);
+}
+.friend-request-row {
+  padding: 11px 12px;
+  margin-top: 9px;
+}
+.lineage-branch-card {
+  padding: 12px 14px;
+}
+.lineage-map-heading {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.link-list { display: grid; gap: 9px; margin-top: 15px; }
+.link-row { padding: 12px; }
+.private-chat-messages {
+  max-height: 48vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.private-message {
+  max-width: min(88%, 520px);
+  overflow-wrap: anywhere;
+}
+.boli-wallet-card,
+.boli-heritage-level,
+.boli-heritage-fund,
+.boli-marketplace {
+  margin-top: 14px;
+}
+.boli-wallet-card { margin-bottom: 14px; }
+.boli-marketplace { margin-bottom: 20px; }
+.empty-state { text-align: center; }
+@media (max-width: 600px) {
+  .memory-card { grid-template-columns: minmax(0, 1fr); }
+  .memory-card .memory-media-preview { max-height: 300px; }
+  .memory-location-side {
+    border-left: 0;
+    border-top: 1px solid rgba(151, 190, 194, .12);
+    padding: 10px 15px 12px;
+  }
+  .memory-copy, .flow-post-content { padding: 13px 14px 15px; }
+  .flow-card .flow-media { max-height: 320px; }
+  .resonance-row { align-items: flex-start; }
+  .resonance-count { align-self: center; }
+  .friend-request-row { flex-wrap: wrap; }
+}
