@@ -1921,3 +1921,27 @@ label { line-height: 1.45; letter-spacing: .01em; }
   .friend-request-form { flex-direction:column; }
   .friend-request-form input,.friend-request-form button { width:100%; }
 }
+
+
+/* BOLI friends and notification center — clear social-network style. */
+.topbar-actions{display:flex;align-items:center;gap:9px}
+.notification-button{position:relative;display:grid;place-items:center;width:40px;height:40px;border:1px solid rgba(130,213,204,.2);border-radius:50%;background:rgba(255,255,255,.055);color:#e6f4ef}
+.notification-count{position:absolute;top:-4px;right:-5px;display:grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border:2px solid #081a27;border-radius:20px;background:#e45d69;color:white;font-size:10px;font-weight:800}
+.friends-list-heading{display:flex;align-items:center;gap:8px;margin:20px 0 10px;padding-top:17px;border-top:1px solid rgba(151,190,194,.15);color:#f0e6d0;font-size:15px}
+.friend-list-card{display:flex;align-items:center;gap:12px;margin-top:9px;padding:12px;border:1px solid rgba(151,190,194,.16);border-radius:15px;background:linear-gradient(115deg,rgba(255,255,255,.045),rgba(255,255,255,.018))}
+.friend-list-card.has-unread-message{border-color:rgba(105,220,201,.42);background:linear-gradient(115deg,rgba(38,139,128,.16),rgba(255,255,255,.025))}
+.friend-list-avatar{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid rgba(118,222,207,.34);border-radius:50%;background:linear-gradient(145deg,rgba(47,153,143,.45),rgba(12,35,49,.95));color:#f3d99d;font-size:17px;font-weight:800}
+.friend-list-details{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px}
+.friend-list-details>strong{overflow:hidden;color:#edf3e9;font-size:12px;text-overflow:ellipsis;white-space:nowrap}
+.friend-list-details>small{display:flex;align-items:center;gap:6px;color:rgba(218,235,230,.58);font-size:10px}
+.friend-online-dot{width:7px;height:7px;border-radius:50%;background:#63d6a4;box-shadow:0 0 8px rgba(99,214,164,.35)}
+.friend-list-details .unread-message-pill{align-self:flex-start;margin-top:2px}
+.friend-list-card .message-open-button{flex:0 0 auto;min-height:36px;padding:7px 10px;font-size:11px}
+.friends-empty-state{display:flex;align-items:center;flex-direction:column;gap:8px;margin-top:10px;padding:23px 15px;border:1px dashed rgba(151,190,194,.2);border-radius:15px;color:rgba(220,235,230,.65);text-align:center}
+.friends-empty-state svg{color:#83d9cc}
+.friends-empty-state strong{color:#eee5d2;font-size:13px}
+.friends-empty-state span{max-width:270px;font-size:11px;line-height:1.5}
+.friend-request-row:not(.friend-list-card){display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:12px;border:1px solid rgba(151,190,194,.15);border-radius:14px;background:rgba(255,255,255,.03)}
+.friend-request-row:not(.friend-list-card)>span{flex:1 1 150px;min-width:0;overflow-wrap:anywhere}
+.unread-message-pill{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid rgba(105,220,201,.24);border-radius:20px;background:rgba(48,157,143,.15);color:#9ce8d7;font-size:10px;font-weight:700}
+@media(max-width:480px){.friend-list-card{gap:9px;padding:10px}.friend-list-avatar{flex-basis:39px;width:39px;height:39px}.friend-list-card .message-open-button{padding:7px 9px}}
