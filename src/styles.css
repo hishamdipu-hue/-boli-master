@@ -2126,3 +2126,64 @@ label { line-height: 1.45; letter-spacing: .01em; }
 @keyframes cowrie-pulse{0%,100%{transform:scale(var(--shell-growth,1)) rotate(-4deg);filter:drop-shadow(0 0 5px rgba(79,226,209,.24));}50%{transform:scale(calc(var(--shell-growth,1) * 1.09)) rotate(4deg);filter:drop-shadow(0 0 15px rgba(79,226,209,.65));}}
 @media(max-width:420px){.boli-living-shell{gap:10px}.boli-living-shell-art{width:48px;height:48px;flex-basis:48px;font-size:36px}.boli-pulse-total strong{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.boli-living-shell-art{animation:none!important;}}
+
+
+/* BOLI responsive social-feed layout and compact friend-request field */
+.app-shell {
+  width: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+}
+.content-view,
+.content-view.flow-view {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  min-width: 0;
+}
+.content-view > * { min-width: 0; }
+.content-view .flow-card,
+.content-view .memory-card,
+.content-view .friend-request-panel,
+.content-view .sentinel-panel,
+.content-view .lineage-map,
+.content-view .private-chat-panel {
+  width: 100%;
+  max-width: 100%;
+}
+.vessel-view {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+}
+.friend-request-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.friend-request-form input {
+  flex: 0 1 320px;
+  width: 100%;
+  max-width: 320px;
+  min-width: 0;
+  height: 42px;
+  margin: 0;
+  padding: 10px 12px;
+}
+.friend-request-form button {
+  flex: 0 0 auto;
+  width: auto;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 14px;
+}
+@media (max-width: 600px) {
+  .app-shell { padding-inline: 12px; }
+  .content-view,
+  .content-view.flow-view,
+  .vessel-view { width: 100%; max-width: 100%; }
+  .friend-request-form { align-items: stretch; }
+  .friend-request-form input { flex-basis: 100%; max-width: 100%; }
+  .friend-request-form button { align-self: flex-start; }
+}
