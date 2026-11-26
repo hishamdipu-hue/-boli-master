@@ -1282,3 +1282,39 @@ input,select,textarea,button{max-width:100%}
   .app-shell { padding-left: 10px; padding-right: 10px; }
   .national-flow-card .flow-post-content { padding-inline: 11px; }
 }
+
+
+/* Keep the vessel shell fully above the member name on narrow screens. */
+@media (max-width: 600px) {
+  .vessel-view .shell-stage.shell-artwork {
+    height: 230px !important;
+    min-height: 0;
+    margin: 8px auto 24px !important;
+    overflow: visible;
+  }
+  .vessel-view .shell-stage.shell-artwork .shell-image {
+    width: 66% !important;
+    height: 76% !important;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: none !important;
+    animation: none !important;
+  }
+  .vessel-view .vessel-name {
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+    clear: both;
+  }
+}
+@media (max-width: 380px) {
+  .vessel-view .shell-stage.shell-artwork {
+    height: 210px !important;
+    margin-bottom: 22px !important;
+  }
+  .vessel-view .shell-stage.shell-artwork .shell-image {
+    width: 64% !important;
+    height: 74% !important;
+  }
+}
