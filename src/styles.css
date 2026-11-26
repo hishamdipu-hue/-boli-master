@@ -1318,3 +1318,181 @@ input,select,textarea,button{max-width:100%}
     height: 74% !important;
   }
 }
+
+
+/* BOLI interface polish — consistent typography, spacing, controls and living shell motion. */
+:root {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body, button, input, textarea, select {
+  font-family: 'DM Sans', sans-serif;
+}
+h1, h2, h3, .wordmark, .vessel-name, .login-hero h1,
+.content-view h1, .sentinel-panel h2, .memory-copy h3,
+.flow-card h3, .modal-heading h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+p { text-wrap: pretty; }
+button, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button { transition: background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease; }
+button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
+  outline: 2px solid #75e2d7;
+  outline-offset: 3px;
+}
+input, textarea, select {
+  font-size: 16px;
+  line-height: 1.45;
+  border-radius: 11px;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+input::placeholder, textarea::placeholder { color: #78939e; opacity: 1; }
+textarea { font-family: 'DM Sans', sans-serif; }
+label { line-height: 1.45; letter-spacing: .01em; }
+.eyebrow, .shell-caption {
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: .16em;
+  font-weight: 700;
+}
+.app-shell {
+  width: min(100%, 1120px);
+  padding: clamp(18px, 3vw, 32px) clamp(14px, 3vw, 28px) calc(112px + env(safe-area-inset-bottom));
+}
+.topbar { margin-bottom: 4px; }
+.content-view {
+  width: min(100%, 820px);
+  margin: clamp(28px, 5vw, 54px) auto 36px;
+}
+.content-view h1 {
+  font-size: clamp(34px, 5vw, 46px);
+  line-height: 1.12;
+  margin: 10px 0 12px;
+}
+.content-view > .muted { max-width: 620px; margin: 0 0 22px; }
+.login-hero { margin-top: clamp(18px, 4vh, 38px); }
+.login-hero h1 { line-height: 1.12; letter-spacing: -.035em; }
+.login-hero > p { line-height: 1.7; }
+.intro { margin-block: clamp(30px, 6vw, 56px) 30px; }
+.panel, .auth-panel, .memory-modal { border-radius: 20px; }
+.panel { padding: clamp(18px, 3vw, 25px); }
+.auth-panel {
+  margin-top: 24px !important;
+  margin-bottom: 32px !important;
+  padding: 20px 20px 18px;
+}
+.auth-panel label { margin: 9px 0; font-size: 12px; }
+.auth-panel input, .auth-panel select, .auth-panel textarea { min-height: 44px; padding: 10px 12px; }
+.auth-panel .primary-button { min-height: 46px; margin-top: 10px; font-size: 14px; }
+.primary-button {
+  min-height: 46px;
+  padding: 12px 18px;
+  letter-spacing: .01em;
+}
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(18, 205, 194, .2);
+}
+.primary-button:active:not(:disabled) { transform: translateY(0) scale(.99); }
+.text-button { min-height: 34px; padding: 6px 10px; }
+.icon-button, .refresh-button { min-height: 42px; border-radius: 11px; }
+.memory-list { gap: 18px; margin-top: 28px; }
+.memory-card, .flow-card, .sentinel-panel, .friend-request-panel,
+.lineage-map, .private-chat-panel, .empty-state {
+  border-radius: 18px;
+}
+.memory-copy { padding: 18px 20px; }
+.memory-copy h3, .flow-card h3 { font-size: clamp(20px, 3vw, 24px); line-height: 1.2; }
+.memory-copy p, .flow-card p, .muted { line-height: 1.7; }
+.field-grid { gap: 14px; }
+.memory-modal { padding: clamp(18px, 4vw, 26px); }
+.memory-modal label { margin: 12px 0; }
+.memory-modal input, .memory-modal select, .memory-modal textarea { min-height: 44px; }
+.vessel-view { padding-top: clamp(20px, 4vw, 42px); }
+.vessel-view .shell-caption { margin-bottom: 8px; }
+.vessel-view .shell-stage.shell-artwork {
+  margin: 8px auto 22px !important;
+}
+.vessel-name {
+  line-height: 1.12;
+  letter-spacing: -.035em;
+  margin: 0;
+}
+.vessel-subtitle { line-height: 1.6; margin: 12px auto 26px; }
+.memory-button { min-height: 52px; border-radius: 13px; }
+.sentinel-panel { padding: clamp(18px, 3vw, 26px); }
+.friend-request-panel { padding: clamp(15px, 3vw, 22px); }
+.friend-request-form { gap: 10px; }
+.friend-request-form input { min-width: 0; }
+.private-chat-panel { padding: clamp(14px, 3vw, 20px); }
+.private-chat-messages { gap: 11px; padding-block: 16px; }
+.private-message { padding: 11px 13px; border-radius: 15px; }
+.private-chat-compose { gap: 10px; }
+.private-chat-compose textarea { border-radius: 13px; }
+.bottom-nav {
+  padding-top: 10px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  border-radius: 18px 18px 0 0;
+}
+.nav-item { min-height: 48px; font-weight: 600; }
+.notice { border-radius: 13px; padding: 14px 16px; }
+.loading { line-height: 1.5; }
+.shell-stage.shell-artwork .shell-image,
+.login-shell .shell-stage.shell-artwork .shell-image {
+  transform-origin: 50% 50%;
+  animation: boli-shell-breathe-v2 3.4s cubic-bezier(.45, 0, .55, 1) infinite !important;
+  will-change: transform, filter, opacity;
+}
+.shell-stage.shell-artwork::before {
+  animation: boli-shell-aura-v2 3.4s ease-in-out infinite !important;
+}
+@keyframes boli-shell-breathe-v2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(.965);
+    filter: brightness(.96) saturate(.98) drop-shadow(0 10px 18px rgba(0,0,0,.22)) drop-shadow(0 0 9px rgba(38,249,231,.14));
+  }
+  50% {
+    transform: translate3d(0, -5px, 0) scale(1.035);
+    filter: brightness(1.08) saturate(1.08) drop-shadow(0 12px 22px rgba(0,0,0,.2)) drop-shadow(0 0 18px rgba(38,249,231,.28));
+  }
+}
+@keyframes boli-shell-aura-v2 {
+  0%, 100% { opacity: .3; transform: scale(.86); }
+  50% { opacity: .92; transform: scale(1.14); }
+}
+@media (max-width: 700px) {
+  .app-shell { padding: 14px 14px calc(100px + env(safe-area-inset-bottom)); }
+  .content-view { margin: 24px auto 28px; }
+  .content-view h1 { font-size: clamp(32px, 9vw, 40px); }
+  .login-shell { margin-bottom: 20px !important; }
+  .auth-panel { margin-top: 20px !important; padding: 18px 16px 16px; }
+  .vessel-view .shell-stage.shell-artwork { margin-bottom: 20px !important; }
+  .memory-list { gap: 14px; }
+  .memory-copy { padding: 15px 16px; }
+  .field-grid { gap: 8px; }
+  .bottom-nav { padding-inline: 8px; }
+}
+@media (max-width: 380px) {
+  .app-shell { padding-inline: 11px; }
+  .auth-panel { margin-top: 17px !important; padding: 16px 13px 14px; }
+  .content-view h1 { font-size: 32px; }
+  .nav-item { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .shell-stage.shell-artwork .shell-image,
+  .login-shell .shell-stage.shell-artwork .shell-image { animation: none !important; }
+}
