@@ -43,6 +43,33 @@ jobs:
       - name: Generate Android project
         run: npx cap add android
 
+      - name: Create Android launcher icon from the BOLI shell artwork
+        run: |
+          python3 -m pip install --quiet cairosvg pillow
+          python3 - <<'PY'
+          import os
+          import xml.etree.ElementTree as ET
+          import cairosvg
+          from PIL import Image
+          from io import BytesIO
+          svg = open('public/boli-icon.svg', 'rb').read()
+          png = cairosvg.svg2png(bytestring=svg, output_width=512, output_height=512)
+          icon = Image.open(BytesIO(png)).convert('RGBA')
+          sizes = {'mdpi':48,'hdpi':72,'xhdpi':96,'xxhdpi':144,'xxxhdpi':192}
+          for density, size in sizes.items():
+              folder = f'android/app/src/main/res/mipmap-{density}'
+              os.makedirs(folder, exist_ok=True)
+              icon.resize((size,size), Image.Resampling.LANCZOS).save(f'{folder}/boli_icon.png')
+          path = 'android/app/src/main/AndroidManifest.xml'
+          ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
+          tree = ET.parse(path)
+          app = tree.getroot().find('application')
+          if app is None: raise SystemExit('Android application element not found')
+          app.set('{http://schemas.android.com/apk/res/android}icon', '@mipmap/boli_icon')
+          app.set('{http://schemas.android.com/apk/res/android}roundIcon', '@mipmap/boli_icon')
+          tree.write(path, encoding='utf-8', xml_declaration=True)
+          PY
+
       - name: Register BOLI authentication deep link
         run: |
           python3 - <<'PY'
