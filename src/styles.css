@@ -1558,3 +1558,18 @@ label { line-height: 1.45; letter-spacing: .01em; }
 .boli-fund-contribute input{min-width:0;width:100%;padding:11px 12px;border:1px solid rgba(117,211,203,.22);border-radius:10px;background:rgba(0,0,0,.2);color:#eef7f2}
 .boli-fund-contribute .primary-button{min-height:42px;padding:0 14px;white-space:nowrap}
 @media(max-width:480px){.boli-fund-contribute{grid-template-columns:1fr 1fr}.boli-fund-contribute label{grid-column:1/-1}.boli-fund-contribute .primary-button{grid-column:1/-1}}
+
+
+/* BOLI Heritage Pulse — one calm focal point for shared preservation. */
+.boli-pulse-orbit{position:relative;display:grid;place-items:center;min-height:176px;margin:18px auto 12px;isolation:isolate;overflow:hidden;border:1px solid rgba(90,222,207,.14);border-radius:16px;background:radial-gradient(ellipse at center,rgba(31,139,130,.16),rgba(5,20,31,.08) 62%,transparent 75%)}
+.boli-pulse-orbit>div{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:2px}
+.boli-pulse-orbit>div strong{color:#f3d58b;font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,7vw,42px);font-weight:500;line-height:1.05;text-shadow:0 0 22px rgba(243,213,139,.18)}
+.boli-pulse-orbit>div small{color:rgba(203,239,230,.72);font-size:9px;font-weight:700;letter-spacing:.18em}
+.boli-pulse-core{position:absolute;z-index:1;display:grid;place-items:center;width:112px;height:112px;border:1px solid rgba(112,235,216,.32);border-radius:50%;color:#f4d991;font-size:28px;background:radial-gradient(circle,rgba(54,193,174,.2),rgba(7,34,44,.12) 68%);box-shadow:0 0 34px rgba(52,211,191,.16),inset 0 0 24px rgba(52,211,191,.1);animation:boli-pulse-core 4s ease-in-out infinite}
+.boli-pulse-ring{position:absolute;z-index:0;width:136px;height:136px;border:1px solid rgba(94,224,206,.2);border-radius:50%;animation:boli-pulse-wave 4.8s ease-out infinite}
+.boli-pulse-ring-two{animation-delay:2.4s}
+@keyframes boli-pulse-wave{0%{transform:scale(.72);opacity:0}18%{opacity:.55}100%{transform:scale(1.48);opacity:0}}
+@keyframes boli-pulse-core{0%,100%{transform:scale(.97);filter:brightness(.95)}50%{transform:scale(1.04);filter:brightness(1.13)}}
+.boli-fund-project h4{font-family:'Playfair Display',Georgia,serif;font-size:18px}
+.boli-fund-contribute .primary-button{letter-spacing:.01em}
+@media(prefers-reduced-motion:reduce){.boli-pulse-core,.boli-pulse-ring{animation:none}}
