@@ -2267,3 +2267,60 @@ label { line-height: 1.45; letter-spacing: .01em; }
     max-width: 100% !important;
   }
 }
+
+
+/* FINAL FIX: Sentinel email control must be a single-line horizontal bar. */
+.friend-request-panel form.friend-request-form {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) max-content !important;
+  grid-auto-flow: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+.friend-request-panel form.friend-request-form > input[type="email"] {
+  display: block !important;
+  box-sizing: border-box !important;
+  grid-column: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  aspect-ratio: auto !important;
+  padding: 0 13px !important;
+  margin: 0 !important;
+  border-radius: 10px !important;
+  line-height: 42px !important;
+  font-size: 13px !important;
+  writing-mode: horizontal-tb !important;
+  resize: none !important;
+}
+.friend-request-panel form.friend-request-form > button[type="submit"] {
+  grid-column: 2 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 12px !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 560px) {
+  .friend-request-panel form.friend-request-form {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) max-content !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+  .friend-request-panel form.friend-request-form > input[type="email"] {
+    width: 100% !important;
+    max-width: none !important;
+    flex: initial !important;
+  }
+}
