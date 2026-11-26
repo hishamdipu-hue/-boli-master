@@ -1,0 +1,17 @@
+{
+  "id": "/",
+  "name": "BOLI — Maldivian Cultural Memory",
+  "short_name": "BOLI",
+  "description": "A digital vessel for preserving Maldivian culture, stories and memories.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "categories": ["education", "social", "lifestyle"],
+  "icons": [
+    { "src": "/boli-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/boli-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
