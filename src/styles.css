@@ -1299,7 +1299,7 @@ input,select,textarea,button{max-width:100%}
     max-height: 100%;
     object-fit: contain;
     transform: none !important;
-    animation: none !important;
+    animation: boli-shell-living 3.2s ease-in-out infinite !important;
   }
   .vessel-view .vessel-name {
     position: relative;
