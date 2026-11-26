@@ -1982,3 +1982,51 @@ label { line-height: 1.45; letter-spacing: .01em; }
     width: auto;
   }
 }
+
+
+/* BOLI Living Heritage Lineage */
+.lineage-view { padding-bottom: 34px; }
+.lineage-hero-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:18px 0; }
+.lineage-hero-stats > div { display:flex; flex-direction:column; gap:4px; padding:14px 12px; border:1px solid rgba(207,171,100,.2); border-radius:14px; background:linear-gradient(145deg,rgba(203,169,103,.09),rgba(23,47,51,.25)); }
+.lineage-hero-stats strong { color:#e4c27b; font-size:23px; line-height:1; }
+.lineage-hero-stats span { color:var(--muted,#a8aaa7); font-size:11px; }
+.lineage-action-row { display:flex; flex-wrap:wrap; gap:9px; margin:14px 0 18px; }
+.lineage-section-tabs { display:flex; gap:7px; overflow-x:auto; padding:4px 1px 12px; margin-bottom:10px; scrollbar-width:none; }
+.lineage-section-tabs button { flex:0 0 auto; display:flex; align-items:center; gap:7px; min-height:38px; padding:8px 12px; border:1px solid rgba(205,176,117,.18); border-radius:999px; color:var(--muted,#aaa); background:rgba(255,255,255,.025); font-size:12px; }
+.lineage-section-tabs button.active { color:#f1d28e; border-color:rgba(218,183,111,.55); background:rgba(203,169,103,.13); }
+.lineage-invite-card { display:grid; gap:12px; padding:17px; margin:10px 0 18px; border:1px solid rgba(211,177,108,.24); border-radius:16px; background:rgba(203,169,103,.055); }
+.lineage-invite-card h3,.lineage-content-panel h2 { margin:5px 0 7px; }
+.lineage-invite-card p { margin:0; font-size:13px; }
+.lineage-incoming-card { margin:12px 0; padding:14px; border-radius:14px; border:1px solid rgba(211,177,108,.2); }
+.lineage-content-panel { padding:17px; margin-top:8px; border:1px solid rgba(205,176,117,.19); border-radius:18px; background:linear-gradient(150deg,rgba(24,49,50,.35),rgba(8,17,21,.5)); }
+.lineage-panel-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.lineage-panel-heading h2 { margin:5px 0 0; }
+.lineage-count { color:#dfbd78; font-size:12px; white-space:nowrap; }
+.lineage-content-panel > .muted { font-size:13px; line-height:1.55; }
+.lineage-feature-empty { display:flex; flex-direction:column; align-items:center; gap:9px; text-align:center; padding:28px 14px; color:var(--muted,#aaa); }
+.lineage-feature-empty svg { color:#d8b66f; }
+.lineage-feature-empty strong { color:var(--text,#eee); }
+.lineage-feature-empty span { max-width:360px; font-size:12px; line-height:1.5; }
+.lineage-story-card { display:grid; grid-template-columns:78px minmax(0,1fr); gap:13px; padding:13px 0; border-top:1px solid rgba(255,255,255,.07); }
+.lineage-story-card > img,.lineage-story-symbol { width:78px; height:78px; border-radius:12px; object-fit:cover; }
+.lineage-story-symbol { display:grid; place-items:center; color:#dfbd78; background:rgba(203,169,103,.1); }
+.lineage-story-card h3 { margin:5px 0; font-size:15px; }
+.lineage-story-card p { margin:0 0 6px; color:var(--muted,#aaa); font-size:12px; line-height:1.5; white-space:pre-wrap; }
+.lineage-story-card small { color:var(--muted,#888); font-size:10px; }
+.lineage-story-card .eyebrow { font-size:9px; }
+.lineage-island-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:10px; margin-top:15px; }
+.lineage-island-card { display:flex; flex-direction:column; gap:7px; min-width:0; padding:14px; border:1px solid rgba(205,176,117,.18); border-radius:14px; background:rgba(255,255,255,.025); }
+.lineage-island-card > svg { color:#dfbd78; }
+.lineage-island-card strong { font-size:14px; }
+.lineage-island-card > span { color:var(--muted,#aaa); font-size:11px; }
+.lineage-island-card div { display:grid; gap:5px; padding-top:7px; border-top:1px solid rgba(255,255,255,.07); }
+.lineage-island-card small { overflow:hidden; color:var(--muted,#aaa); font-size:10px; text-overflow:ellipsis; white-space:nowrap; }
+.lineage-timeline { margin:18px 0 4px 7px; padding-left:19px; border-left:1px solid rgba(215,181,111,.38); }
+.lineage-timeline-item { position:relative; padding:0 0 22px 5px; }
+.lineage-timeline-dot { position:absolute; left:-25px; top:3px; width:11px; height:11px; border:2px solid #d8b66f; border-radius:50%; background:#102226; box-shadow:0 0 12px rgba(216,182,111,.25); }
+.lineage-timeline-item small { color:#dfbd78; font-size:10px; letter-spacing:.08em; }
+.lineage-timeline-item h3 { margin:5px 0; font-size:14px; }
+.lineage-timeline-item p { margin:0; color:var(--muted,#aaa); font-size:11px; }
+.lineage-privacy-note { display:flex; align-items:center; justify-content:center; gap:7px; margin:14px 0 0; color:var(--muted,#999); font-size:11px; }
+.lineage-privacy-note svg { color:#d9b875; }
+@media(max-width:480px) { .lineage-hero-stats { gap:7px; } .lineage-hero-stats > div { padding:11px 8px; } .lineage-hero-stats strong { font-size:20px; } .lineage-hero-stats span { font-size:10px; } .lineage-content-panel { padding:13px; } .lineage-story-card { grid-template-columns:64px minmax(0,1fr); gap:10px; } .lineage-story-card > img,.lineage-story-symbol { width:64px; height:64px; } }
