@@ -1,0 +1,8 @@
+{
+  "appId": "com.boli.vessel",
+  "appName": "BOLI",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#07111f"
+  }
+}
