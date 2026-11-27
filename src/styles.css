@@ -2444,3 +2444,69 @@ label { line-height: 1.45; letter-spacing: .01em; }
     animation: none !important;
   }
 }
+
+
+/* Premium interaction pass: restrained depth, clearer focus, and tactile controls. */
+:root {
+  --boli-line: rgba(154, 226, 221, .14);
+  --boli-glass: rgba(8, 34, 43, .72);
+  --boli-glow: rgba(69, 231, 216, .18);
+}
+.app-shell {
+  background:
+    radial-gradient(ellipse at 50% 8%, rgba(27, 113, 119, .13), transparent 42%),
+    linear-gradient(180deg, rgba(2, 17, 27, .98), rgba(4, 25, 34, .98));
+}
+.topbar {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.panel, .memory-card, .flow-card, .lineage-branch-card,
+.friend-list-card, .lineage-invite-card, .lineage-content-panel,
+.lineage-incoming-card, .lineage-story-card, .lineage-island-card,
+.boli-wallet-card, .boli-reward-card, .national-flow-card {
+  border-color: var(--boli-line);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255,255,255,.025);
+  transition: border-color .22s ease, background-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+.primary-button, .memory-button, .seal-button, .icon-button,
+.refresh-button, .message-open-button, .resonance-button, .shell-hub-close {
+  transition: transform .18s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.primary-button:active, .memory-button:active, .seal-button:active,
+.icon-button:active, .refresh-button:active, .message-open-button:active,
+.resonance-button:active, .shell-hub-close:active {
+  transform: scale(.97);
+}
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid rgba(112, 244, 229, .9);
+  outline-offset: 3px;
+}
+.memory-card-photo-open, .clickable-memory-photo {
+  transition: filter .2s ease, transform .25s ease;
+}
+.nav-item {
+  transition: color .2s ease, background-color .2s ease, transform .2s ease;
+}
+.nav-item:active { transform: translateY(1px) scale(.98); }
+.shell-hub-panel, .memory-modal, .photo-viewer-panel, .auth-panel {
+  box-shadow: 0 24px 70px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.045);
+}
+@media (hover: hover) and (pointer: fine) {
+  .memory-card:hover, .flow-card:hover, .lineage-branch-card:hover,
+  .friend-list-card:hover, .lineage-story-card:hover, .lineage-island-card:hover,
+  .boli-wallet-card:hover, .boli-reward-card:hover, .national-flow-card:hover {
+    border-color: rgba(112, 244, 229, .28);
+    box-shadow: 0 16px 38px rgba(0,0,0,.23), 0 0 24px rgba(69,231,216,.045);
+    transform: translateY(-2px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
