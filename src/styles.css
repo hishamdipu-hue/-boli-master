@@ -2510,3 +2510,116 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* BOLI editorial product polish: official hierarchy, restrained preview cards, unified app chrome. */
+:root {
+  --boli-ink: #071923;
+  --boli-panel: #0b2632;
+  --boli-edge: rgba(132, 194, 196, .18);
+  --boli-muted: #91a8b2;
+  --boli-teal: #8bd9d1;
+}
+.app-shell {
+  max-width: 820px;
+  padding-left: clamp(16px, 4vw, 30px);
+  padding-right: clamp(16px, 4vw, 30px);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(32, 119, 126, .12), transparent 38%),
+    linear-gradient(180deg, rgba(3, 17, 26, .98), rgba(5, 24, 34, .98));
+}
+.topbar {
+  min-height: 48px;
+  border-bottom: 1px solid rgba(142, 194, 196, .1);
+  padding-bottom: 9px;
+}
+.wordmark {
+  font-size: 29px;
+  letter-spacing: .04em;
+}
+.content-view {
+  max-width: 640px;
+  margin: clamp(28px, 5vw, 48px) auto 36px;
+}
+.content-view h1 {
+  font-size: clamp(32px, 5vw, 42px);
+  letter-spacing: -.025em;
+  line-height: 1.12;
+}
+.content-view > .muted {
+  max-width: 48ch;
+}
+.panel, .sentinel-panel, .vessel-note {
+  border-radius: 20px;
+  border-color: var(--boli-edge);
+  background: linear-gradient(145deg, rgba(12, 38, 50, .96), rgba(6, 24, 35, .98));
+}
+.panel { padding: clamp(18px, 3.5vw, 26px); }
+.panel-heading { margin-bottom: 22px; }
+.panel-heading p { line-height: 1.5; }
+.memory-list, .link-list {
+  max-width: 640px;
+  gap: 14px;
+}
+.memory-card, .flow-card, .national-flow-card, .lineage-story-card,
+.lineage-island-card, .lineage-branch-card, .friend-list-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(12, 38, 49, .97), rgba(7, 25, 36, .98));
+  border: 1px solid var(--boli-edge);
+}
+.memory-copy {
+  padding: 17px 19px 19px;
+}
+.memory-copy h3, .flow-card h3 {
+  font-size: clamp(19px, 3.5vw, 23px);
+  line-height: 1.25;
+  letter-spacing: -.015em;
+}
+.memory-copy p, .flow-card p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #a4b8bf;
+}
+.memory-card > img {
+  max-height: 280px;
+  object-fit: cover;
+}
+.memory-image-placeholder {
+  min-height: 130px;
+  border-bottom: 1px solid rgba(132, 194, 196, .1);
+}
+.empty-state {
+  border-radius: 18px;
+  padding: clamp(24px, 5vw, 36px) 22px;
+  background: linear-gradient(145deg, rgba(11, 38, 49, .9), rgba(7, 25, 36, .94));
+}
+.bottom-nav {
+  width: min(100%, 820px);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(6, 25, 35, .94);
+  border: 1px solid rgba(132, 194, 196, .16);
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -12px 36px rgba(0,0,0,.2);
+}
+.nav-item {
+  min-height: 48px;
+  font-size: 10px;
+  letter-spacing: .015em;
+}
+.nav-item.active {
+  color: #b4f0e8;
+}
+.nav-item.active svg {
+  filter: drop-shadow(0 0 8px rgba(91, 226, 213, .22));
+}
+@media (max-width: 600px) {
+  .app-shell { padding-bottom: 100px; }
+  .topbar { min-height: 42px; }
+  .content-view { margin-top: 28px; }
+  .content-view h1 { margin-top: 8px; }
+  .memory-list { margin-top: 24px; }
+  .memory-copy { padding: 15px 16px 17px; }
+  .bottom-nav { border-radius: 17px 17px 0 0; }
+}
