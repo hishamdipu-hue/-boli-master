@@ -2634,3 +2634,103 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 0 !important;
   border: 0 !important;
 }
+
+
+/* Inside the Shell — match the approved luminous teal-and-gold reference. */
+.shell-hub-backdrop {
+  padding: clamp(12px, 3vw, 28px);
+  background: rgba(0, 7, 13, .84);
+  backdrop-filter: blur(12px);
+}
+.shell-hub-panel {
+  width: min(100%, 780px);
+  max-height: min(94dvh, 1100px);
+  padding: clamp(24px, 4vw, 42px) clamp(18px, 4vw, 34px) 28px;
+  border: 1px solid rgba(113, 228, 224, .42);
+  border-radius: clamp(20px, 4vw, 32px);
+  background:
+    radial-gradient(ellipse at 50% 8%, rgba(0, 229, 218, .13), transparent 36%),
+    radial-gradient(ellipse at 50% 100%, rgba(13, 120, 142, .14), transparent 38%),
+    linear-gradient(160deg, #061d28 0%, #03131d 55%, #041b25 100%);
+  box-shadow: 0 0 0 1px rgba(220, 190, 112, .12), 0 24px 90px rgba(0,0,0,.62), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.shell-hub-close {
+  width: 46px;
+  height: 46px;
+  right: 18px;
+  top: 18px;
+  border-color: rgba(221, 188, 109, .42);
+  background: rgba(255,255,255,.035);
+  color: #f0d17f;
+}
+.shell-profile-photo-wrap { gap: 16px; margin-bottom: 28px; }
+.shell-profile-photo {
+  width: clamp(104px, 19vw, 150px);
+  height: clamp(104px, 19vw, 150px);
+  border: 2px solid #57e5d9;
+  background: linear-gradient(145deg, #24515c, #153743);
+  color: #f5f6f3;
+  font-size: 54px;
+  box-shadow: 0 0 0 6px rgba(67, 226, 216, .08), 0 0 34px rgba(20, 238, 222, .3);
+}
+.profile-picture-change {
+  min-height: 50px;
+  padding: 0 24px;
+  border: 1px solid rgba(255, 213, 118, .75);
+  background: linear-gradient(110deg, rgba(9, 43, 53, .98), rgba(6, 28, 40, .98));
+  color: #e5f4f4;
+  font-size: 15px;
+  box-shadow: 0 0 0 1px rgba(255, 213, 118, .12), 0 0 20px rgba(255, 205, 98, .1);
+}
+.shell-hub-panel > .eyebrow {
+  color: #31d5d1;
+  font-size: 11px;
+  letter-spacing: .22em;
+}
+.shell-hub-panel > h2 {
+  margin: 16px 0 10px;
+  color: #f1d28a;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+.shell-hub-panel > p { color: #9ab8c4; font-size: clamp(13px, 2vw, 17px); margin-bottom: 30px; }
+.shell-hub-links { gap: 12px; }
+.shell-hub-links > button {
+  grid-template-columns: 56px minmax(0, 1fr) 18px;
+  gap: 16px;
+  padding: 17px 18px;
+  min-height: 104px;
+  border: 1px solid rgba(115, 208, 211, .22);
+  border-radius: 24px;
+  background: linear-gradient(115deg, rgba(13, 43, 53, .95), rgba(5, 24, 34, .98));
+  box-shadow: inset 0 1px rgba(255,255,255,.025), 0 8px 22px rgba(0,0,0,.12);
+}
+.shell-hub-symbol {
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(76, 214, 207, .4);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 132, 135, .28), rgba(7, 30, 40, .8));
+  color: #f1cf7b;
+  font-size: 25px;
+  box-shadow: 0 0 20px rgba(37, 210, 203, .08);
+}
+.shell-hub-links strong { color: #f0f2ee; font-size: clamp(15px, 2.5vw, 20px); }
+.shell-hub-links small { margin-top: 7px; color: #9ab6c2; font-size: clamp(12px, 1.8vw, 15px); }
+.shell-hub-links > button > span:last-child { color: #f2ca71; font-size: 30px; }
+.shell-hub-earnings { margin-top: 28px; }
+.shell-hub-earnings > .eyebrow { color: #32d5d1; font-size: 11px; letter-spacing: .2em; }
+.shell-hub-earnings > h3 { color: #f0d48e; font-family: 'Playfair Display', serif; font-size: 27px; font-weight: 500; }
+.shell-hub-signout { color: #c6b37d; }
+@media (max-width: 600px) {
+  .shell-hub-panel { max-height: 96dvh; padding: 24px 14px 20px; }
+  .shell-hub-close { right: 12px; top: 12px; }
+  .shell-profile-photo-wrap { margin-bottom: 22px; }
+  .profile-picture-change { min-height: 46px; padding: 0 18px; font-size: 14px; }
+  .shell-hub-links > button { grid-template-columns: 48px minmax(0,1fr) 14px; gap: 12px; min-height: 86px; padding: 13px 12px; border-radius: 19px; }
+  .shell-hub-symbol { width: 46px; height: 46px; font-size: 22px; }
+  .shell-hub-links strong { font-size: 15px; }
+  .shell-hub-links small { font-size: 12px; }
+}
