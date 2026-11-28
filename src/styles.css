@@ -2804,3 +2804,55 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .flow-post-content p { font-size: 14px; }
   .flow-card .flow-media { max-height: 480px; border-radius: 10px; }
 }
+
+
+/* Facebook-like post preview: strip the card shell from each Flow item. */
+.flow-view .flow-card,
+.flow-view .flow-card.national-flow-card {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.flow-view .flow-card + .flow-card { border-top: 1px solid rgba(151,190,194,.2) !important; }
+.flow-view .flow-post-content {
+  padding: 18px 0 20px;
+  background: transparent;
+}
+.flow-view .flow-card .flow-media {
+  width: 100%;
+  max-width: 100%;
+  max-height: 560px;
+  margin: 12px 0 14px;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+}
+.flow-view .flow-post-content h3 { margin: 8px 0; }
+.flow-view .flow-post-content p { margin: 0 0 10px; }
+.flow-view .flow-post-content > small { display: block; margin: 8px 0 12px; }
+.flow-view .resonance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(151,190,194,.16);
+}
+.flow-view .resonance-button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #a9c0c5;
+  box-shadow: none;
+}
+.flow-view .resonance-button:hover { background: rgba(255,255,255,.045); }
+@media (max-width: 600px) {
+  .flow-view .flow-post-content { padding: 15px 0 17px; }
+  .flow-view .flow-card .flow-media { max-height: 480px; }
+}
