@@ -2623,3 +2623,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .memory-copy { padding: 15px 16px 17px; }
   .bottom-nav { border-radius: 17px 17px 0 0; }
 }
+
+
+/* Keep the native file chooser hidden; the single styled profile-picture button opens it. */
+.shell-profile-photo-wrap input[type="file"][hidden] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
