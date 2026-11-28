@@ -2990,3 +2990,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .boli-bank-link-panel h3{margin:5px 0;font-size:1rem}
 .boli-bank-link-panel p,.boli-bank-link-panel small{margin:0;color:var(--muted,#9aaab3);line-height:1.5}
 .boli-bank-coming-soon{width:100%;min-height:44px;border:1px solid rgba(190,210,220,.2);border-radius:10px;background:rgba(255,255,255,.045);color:inherit;font-weight:600;opacity:.75;cursor:not-allowed}
+
+/* Member identity on every Vessel and Flow post. */
+.vessel-post-avatar,.flow-author-avatar{overflow:hidden;display:inline-grid;place-items:center;flex-shrink:0}
+.vessel-post-avatar img,.flow-author-avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.flow-profile-link{display:inline-flex;align-items:center;justify-content:center;padding:0;border:0;background:transparent;border-radius:50%;min-width:40px;min-height:40px}
+.flow-profile-link .flow-author-avatar{width:44px;height:44px;flex:0 0 44px}
+.member-profile-panel .profile-avatar{overflow:hidden}
+.member-profile-panel .profile-avatar img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}
+@media(max-width:600px){.flow-profile-link .flow-author-avatar{width:40px;height:40px;flex-basis:40px}}
