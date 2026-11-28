@@ -2734,3 +2734,73 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .shell-hub-links strong { font-size: 15px; }
   .shell-hub-links small { font-size: 12px; }
 }
+
+
+/* Flow feed: familiar social timeline, with posts separated rather than boxed. */
+.flow-view {
+  width: min(100% - 24px, 680px);
+  margin-inline: auto;
+}
+.flow-feed-heading {
+  margin: 16px 0 8px;
+  padding: 8px 0 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(151,190,194,.18);
+  border-radius: 0;
+  background: transparent;
+}
+.flow-card {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-bottom: 1px solid rgba(151,190,194,.2);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.flow-post-content {
+  padding: 18px 2px 20px;
+}
+.flow-author { gap: 11px; margin-bottom: 12px; }
+.flow-author-avatar {
+  flex-basis: 44px;
+  width: 44px;
+  height: 44px;
+  border-color: rgba(75,211,203,.38);
+  background: linear-gradient(145deg, #17434b, #0b2834);
+  color: #e9d08c;
+}
+.flow-author strong { color: #e8f0ef; font-size: 14px; }
+.flow-author small { color: #88a8b1; font-size: 11px; }
+.flow-post-content h3 {
+  margin: 8px 0 9px;
+  color: #edf1ee;
+  font-size: 20px;
+  font-weight: 600;
+}
+.flow-post-content p { color: #c3d2d5; font-size: 14px; line-height: 1.65; }
+.flow-card .flow-media {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  margin: 12px 0 14px;
+  border: 1px solid rgba(151,190,194,.14);
+  border-radius: 12px;
+  object-fit: cover;
+}
+.flow-card .flow-post-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(151,190,194,.12);
+}
+@media (max-width: 600px) {
+  .flow-view { width: calc(100% - 24px); }
+  .flow-post-content { padding: 15px 0 17px; }
+  .flow-author-avatar { flex-basis: 40px; width: 40px; height: 40px; }
+  .flow-post-content h3 { font-size: 18px; }
+  .flow-post-content p { font-size: 14px; }
+  .flow-card .flow-media { max-height: 480px; border-radius: 10px; }
+}
