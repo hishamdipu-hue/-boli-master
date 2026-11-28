@@ -2856,3 +2856,97 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .flow-view .flow-post-content { padding: 15px 0 17px; }
   .flow-view .flow-card .flow-media { max-height: 480px; }
 }
+
+
+/* Vessel memories: Facebook-style timeline previews, not boxed cards. */
+.vessel-view .memory-list {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0 !important;
+  width: 100%;
+  max-width: 680px;
+  margin: 30px auto 0 !important;
+  padding: 0 !important;
+}
+.vessel-view .memory-list > .memory-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(151,190,194,.2) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+.vessel-view .memory-list > .memory-card + .memory-card {
+  border-top: 0 !important;
+}
+.vessel-view .memory-card > .memory-media-preview,
+.vessel-view .memory-card > .memory-image-placeholder,
+.vessel-view .memory-card > img {
+  grid-column: 1 !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  max-width: 100%;
+  max-height: 560px !important;
+  margin: 12px 0 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  object-fit: cover;
+}
+.vessel-view .memory-card > .memory-image-placeholder {
+  min-height: 120px;
+}
+.vessel-view .memory-card > .memory-copy {
+  grid-column: 1 !important;
+  grid-row: auto !important;
+  min-width: 0;
+  padding: 16px 0 14px !important;
+  background: transparent !important;
+}
+.vessel-view .memory-card .memory-copy h3 {
+  margin: 7px 0 9px;
+  font-size: clamp(19px, 3.5vw, 23px);
+}
+.vessel-view .memory-card .memory-copy p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.vessel-view .memory-card .memory-copy small {
+  display: block;
+  margin-top: 10px;
+  color: #88a8b1;
+  font-size: 11px;
+}
+.vessel-view .memory-card .memory-location-side {
+  grid-column: 1 !important;
+  grid-row: auto !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 0 0 16px;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #88a8b1;
+}
+.vessel-view .memory-card .memory-location-side .eyebrow {
+  margin-right: 2px;
+}
+.vessel-view .memory-card .memory-location-side strong {
+  color: #c5d6d8;
+}
+@media (max-width: 600px) {
+  .vessel-view .memory-list { width: 100%; }
+  .vessel-view .memory-card > .memory-media-preview,
+  .vessel-view .memory-card > .memory-image-placeholder,
+  .vessel-view .memory-card > img { max-height: 480px !important; }
+  .vessel-view .memory-card > .memory-copy { padding: 15px 0 13px !important; }
+}
