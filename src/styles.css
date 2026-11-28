@@ -2984,3 +2984,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .vessel-view .memory-list>.memory-card>.memory-media-preview,.vessel-view .memory-list>.memory-card>img,.vessel-view .memory-list>.memory-card>video,.vessel-view .memory-list>.memory-card>.memory-image-placeholder{display:block!important;width:100%!important;max-width:100%!important;max-height:520px!important;height:auto!important;min-height:0!important;object-fit:cover!important;border:0!important;border-radius:10px!important;box-shadow:none!important}
 .vessel-view .memory-list>.memory-card .memory-location-side{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:5px 0 0!important}
 @media(max-width:600px){.vessel-view .memory-list{width:100%!important;margin-top:22px!important}.vessel-view .memory-list>.memory-card+.memory-card{margin-top:20px!important;padding-top:20px!important}.vessel-view .memory-list>.memory-card .memory-copy{padding:12px 0 7px!important}}
+
+
+.boli-bank-link-panel{display:grid;gap:10px;margin-top:14px;padding:16px;border:1px solid rgba(190,210,220,.16);border-radius:16px;background:rgba(255,255,255,.025)}
+.boli-bank-link-panel h3{margin:5px 0;font-size:1rem}
+.boli-bank-link-panel p,.boli-bank-link-panel small{margin:0;color:var(--muted,#9aaab3);line-height:1.5}
+.boli-bank-coming-soon{width:100%;min-height:44px;border:1px solid rgba(190,210,220,.2);border-radius:10px;background:rgba(255,255,255,.045);color:inherit;font-weight:600;opacity:.75;cursor:not-allowed}
